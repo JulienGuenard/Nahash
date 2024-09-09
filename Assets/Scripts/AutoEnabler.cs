@@ -1,0 +1,20 @@
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+
+public class AutoEnabler : MonoBehaviour
+{
+    public enum AutoEnableEnum { score, snakeGridTransform, CanPlayerPressDialogNext };
+    public AutoEnableEnum autoEnable;
+
+    private void OnEnable()
+    {
+        switch (autoEnable)
+        {
+            case AutoEnableEnum.score: { UIManager.instance.scoreTxt = GetComponent<TextMeshPro>(); break; }
+            case AutoEnableEnum.snakeGridTransform: { ArenaManager.instance.gridTransform = transform; break; }
+            case AutoEnableEnum.CanPlayerPressDialogNext: { DialogManager.instance.CanPlayerPressDialogNext = false; break; }
+        }
+    }
+}

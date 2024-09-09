@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class EventManager : MonoBehaviour
 {
-    public GameObject sceneEvent;
-    public List<EventObj> mainEventList;
-    public EventObj eventCurrent;
+    EventObj eventCurrent; public EventObj EventCurrent
+    { 
+        get { return eventCurrent; } 
+        set 
+        { 
+            eventCurrent = value;
+            DialogManager.instance.DialogStart();
+        }
+    }
 
     #region References
     public static EventManager instance;
@@ -16,10 +22,4 @@ public class EventManager : MonoBehaviour
         if (instance == null) instance = this;
     }
     #endregion
-
-    public void EventStart(EventObj newEvent)
-    {
-        eventCurrent = newEvent;
-        DialogManager.instance.DialogStart();
-    }
 }

@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class DialogManager : MonoBehaviour
 {
-    public EventObj eventObjCurrent;
-
-    bool isDialoguing; public bool IsDialoguing
+    bool canPlayerPressDialogNext; public bool CanPlayerPressDialogNext
     {
-        get { return isDialoguing; }
+        get { return canPlayerPressDialogNext; }
         set
         {
-            isDialoguing = value;
+            canPlayerPressDialogNext = value;
         }
     }
 
@@ -29,44 +27,39 @@ public class DialogManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && isDialoguing) DialogNext();
-    }
-
-    public void DialogEnable()
-    {
-
-    }
-    public void DialogDisable()
-    {
-
+        if (Input.GetKeyDown(KeyCode.Mouse0) && canPlayerPressDialogNext) DialogNext();
     }
 
     public void DialogStart()
     {
         idCurrent = 0;
         DialogNext();
-        StartCoroutine(DialogStartDelay());
+        StartCoroutine(DialogStart_InputDelay());
     }
-
     public void DialogNext()
     {
-        if (idCurrent >= eventObjCurrent.narrativeList.Count) { DialogEnd(); return; }
+        EventObj eventCurrent = EventManager.instance.EventCurrent;
+
+        if (idCurrent >= eventCurrent.narrativeList.Count) { DialogEnd(eventCurrent); return; }
 
         if (sceneCurrent != null) Destroy(sceneCurrent);
-        GameObject sceneGMB = eventObjCurrent.narrativeList[idCurrent].sceneNarrative;
+
+        CanPlayerPressDialogNext = true;
+
+        GameObject sceneGMB = eventCurrent.narrativeList[idCurrent].sceneNarrative;
         sceneCurrent = Instantiate(sceneGMB, GMBSceneManager.instance.SceneCurrent.transform);
         idCurrent++;
     }
 
-    void DialogEnd()
+    private void DialogEnd(EventObj eventCurrent)
     {
-        if (eventObjCurrent.eventNext == null) { IsDialoguing = false; return; }
-        else EventManager.instance.EventStart(eventObjCurrent.eventNext);
+        if (eventCurrent.eventNext == null) { CanPlayerPressDialogNext = false; return; }
+        else EventManager.instance.EventCurrent = eventCurrent.eventNext;
     }
 
-    IEnumerator DialogStartDelay()
+    IEnumerator DialogStart_InputDelay()
     {
         yield return new WaitForSeconds(0.01f);
-        IsDialoguing = true;
+        CanPlayerPressDialogNext = true;
     }
 }

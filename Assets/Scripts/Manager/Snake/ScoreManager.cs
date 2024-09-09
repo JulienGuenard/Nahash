@@ -9,8 +9,8 @@ public class ScoreManager : MonoBehaviour
     {
         get { return score; }
         set {
-            score = value;
-            UIManager.instance.scoreTxt.text = "Score : " + score.ToString();
+                score = value;
+                UIManager.instance.scoreTxt.text = "Score : " + score.ToString();
             }
     }
 
@@ -22,4 +22,13 @@ public class ScoreManager : MonoBehaviour
         if (instance == null) instance = this;
     }
     #endregion
+
+    private void Update()
+    {
+        if (score >= 6)
+        {
+            Score = 0;
+            DialogManager.instance.DialogNext();
+        }
+    }
 }

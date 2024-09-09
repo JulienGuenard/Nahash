@@ -5,7 +5,9 @@ using UnityEngine;
 public class ArenaManager : MonoBehaviour
 {
     [SerializeField] private GameObject arenaGMB;
-    public Vector3 grid;
+    public Vector2 gridX;
+    public Vector2 gridY;
+    public Transform gridTransform;
 
     #region References
     public static ArenaManager instance;

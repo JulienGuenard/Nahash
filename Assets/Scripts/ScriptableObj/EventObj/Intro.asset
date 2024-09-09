@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f305b545501e3e04194503ad8859468c, type: 3}
   m_Name: Intro
   m_EditorClassIdentifier: 
-  isCinematic: 1
   narrativeList:
   - {fileID: 11400000, guid: d8dbeab4d62d45c4c907e1eaaf30cbe5, type: 2}
   - {fileID: 11400000, guid: 22e0758dce3af364bbae1f6c4442527e, type: 2}

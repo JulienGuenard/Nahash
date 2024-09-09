@@ -21,15 +21,15 @@ public class FoodManager : MonoBehaviour
 
     public void FoodCreate(Vector2 forbiddenPos)
     {
-        Vector3 grid = ArenaManager.instance.grid;
-        Vector2 pos = new Vector2(Random.Range(1, Mathf.FloorToInt(grid.x) - 1) + 30f, Random.Range(1, Mathf.FloorToInt(grid.y) - 1) - 6f);
-        if (pos == forbiddenPos) { FoodCreate(forbiddenPos); return; }
-        Instantiate(foodPrefab, pos, Quaternion.identity);
-    }
+        Vector2 gridX = ArenaManager.instance.gridX;
+        Vector2 gridY = ArenaManager.instance.gridY;
+        Transform gridTransform = ArenaManager.instance.gridTransform;
 
-    IEnumerator aaaeazea()
-    {
-        yield return new WaitForSeconds(5f);
-        
+        int randX = Random.Range(Mathf.FloorToInt(gridX.x), Mathf.FloorToInt(gridX.y));
+        int randY = Random.Range(Mathf.FloorToInt(gridY.x), Mathf.FloorToInt(gridY.y));
+
+        Vector2 pos = new Vector2(randX, randY);
+        if (pos == forbiddenPos) { FoodCreate(forbiddenPos); return; }
+        Instantiate(foodPrefab, pos, Quaternion.identity, gridTransform);
     }
 }

@@ -9,10 +9,14 @@ public class GMBSceneManager : MonoBehaviour
     { 
         get { return sceneCurrent; } 
         set 
-        { 
+        {
+            if (sceneCurrent != null)   SceneLast = sceneCurrent;
+            if (sceneLast != null)      sceneLast.SetActive(false);
+
             sceneCurrent = value;
-            CameraManager.instance.ChangeCamera(sceneCurrent.name);
-            SetScene(sceneCurrent.name, true);
+            sceneCurrent.SetActive(true);
+            CameraManager.instance.CameraChange(sceneCurrent.name);
+            GameManager.instance.SceneChangeManager(sceneCurrent.name, true);
         }
     }
     GameObject sceneLast; public GameObject SceneLast
@@ -21,7 +25,7 @@ public class GMBSceneManager : MonoBehaviour
         set
         {
             sceneLast = value;
-            SetScene(sceneLast.name, false);
+            GameManager.instance.SceneChangeManager(sceneLast.name, false);
         }
     }
     #region References
@@ -35,28 +39,14 @@ public class GMBSceneManager : MonoBehaviour
 
     private void Start()
     {
-        StartingScene();
+        SceneStart();
     }
 
-    public void ChangeScene(GameObject sceneOn, EventObj eventNext)
-    {
-        SceneLast = sceneCurrent;
-        sceneCurrent.SetActive(false);
-        SceneCurrent = sceneOn;
-        sceneOn.SetActive(true);
-    }
-
-    private void StartingScene()
+    private void SceneStart()
     {
         foreach (GameObject scene in sceneList)
         {
             if (scene.activeInHierarchy) { SceneCurrent = scene; break; }
         }
-    }
-
-    private void SetScene(string sceneName, bool state)
-    {
-        if (sceneName == "SceneWorldmap" && state) WorldmapManager.instance.WorldmapEnable();
-        if (sceneName == "SceneWorldmap" && !state) WorldmapManager.instance.WorldmapDisable();
     }
 }

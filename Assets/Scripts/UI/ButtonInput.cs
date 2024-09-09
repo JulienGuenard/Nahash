@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.LowLevel;
 
 public class ButtonInput : MonoBehaviour
 {
-    public EventObj nextEvent;
-    public GameObject sceneOn;
+    public GameObject sceneToGo;
+    public EventObj eventNext;
 
     private void OnMouseDown()
     {
-        if (nextEvent != null) EventManager.instance.eventCurrent = nextEvent;
+        if (sceneToGo != null) GMBSceneManager.instance.SceneCurrent = sceneToGo;
+        if (eventNext != null) EventManager.instance.EventCurrent = eventNext;
     }
 }

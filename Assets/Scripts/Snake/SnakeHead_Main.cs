@@ -51,7 +51,8 @@ public class SnakeHead_Main : MonoBehaviour
 
     void BodyCreate()
     {
-        bodyList.Add(Instantiate(bodyPrefab, bodyLastPosition, Quaternion.identity).GetComponent<SnakeBody_Main>());
+        Transform grid = ArenaManager.instance.gridTransform;
+        bodyList.Add(Instantiate(bodyPrefab, bodyLastPosition, Quaternion.identity, grid).GetComponent<SnakeBody_Main>());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
