@@ -53,7 +53,7 @@ public class DialogManager : MonoBehaviour
 
     private void DialogEnd(EventObj eventCurrent)
     {
-        if (eventCurrent.eventNext == null) { CanPlayerPressDialogNext = false; return; }
+        if (eventCurrent.eventNext == null) { GMBSceneManager.instance.SceneNameCurrent = eventCurrent.sceneNext; }
         else EventManager.instance.EventCurrent = eventCurrent.eventNext;
     }
 

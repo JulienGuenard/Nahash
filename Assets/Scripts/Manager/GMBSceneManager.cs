@@ -28,6 +28,23 @@ public class GMBSceneManager : MonoBehaviour
             GameManager.instance.SceneChangeManager(sceneLast.name, false);
         }
     }
+    SceneName sceneNameCurrent; public SceneName SceneNameCurrent
+    {
+        get { return sceneNameCurrent; }
+        set
+        {
+            sceneNameCurrent = value;
+            switch (sceneNameCurrent)
+            {
+                case SceneName.None: break;
+                case SceneName.Accueil:     SceneCurrent = sceneList[0]; break;
+                case SceneName.Event:       SceneCurrent = sceneList[1]; break;
+                case SceneName.Hero:        SceneCurrent = sceneList[2]; break;
+                case SceneName.Town:        SceneCurrent = sceneList[3]; break;
+                case SceneName.Worldmap:    SceneCurrent = sceneList[4]; break;
+            }
+        }
+    }
     #region References
     public static GMBSceneManager instance;
 
@@ -40,6 +57,11 @@ public class GMBSceneManager : MonoBehaviour
     private void Start()
     {
         SceneStart();
+    }
+
+    public void SceneWorldmap()
+    {
+        SceneCurrent = sceneList[4];
     }
 
     private void SceneStart()

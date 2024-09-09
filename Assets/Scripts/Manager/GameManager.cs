@@ -40,7 +40,6 @@ public class GameManager : MonoBehaviour
         if (sceneName == "SceneWorldmap" && state) WorldmapManager.instance.WorldmapEnable();
         if (sceneName == "SceneWorldmap" && !state) WorldmapManager.instance.WorldmapDisable();
 
-        /*if (sceneName == "SceneEvent" && state) WorldmapManager.instance.WorldmapEnable();
-        if (sceneName == "SceneEvent" && !state) WorldmapManager.instance.WorldmapDisable();*/
+        if (sceneName != "SceneEvent" && state) DialogManager.instance.CanPlayerPressDialogNext = false;
     }
 }

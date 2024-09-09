@@ -6,4 +6,5 @@ public class EventObj : ScriptableObject
 {
     public List<NarrativeObj> narrativeList;
     public EventObj eventNext;
+    public SceneName sceneNext;
 }
