@@ -4,9 +4,29 @@ using UnityEngine;
 
 public class WorldmapManager : MonoBehaviour
 {
+    public float rngEventDelay;
     public WorldmapPlayer player;
     public GameObject playerWaypoint;
     public GameObject enterTownBtn;
+
+    bool isWMPlayerMoving; public bool IsWMPlayerMoving
+    {
+        get { return isWMPlayerMoving; }
+        set
+        {
+            if (!value)
+            {
+                StopAllCoroutines();
+                playerWaypoint.transform.position = new Vector3(999, 999, 999);
+            }
+            if (value && !isWMPlayerMoving) StartCoroutine(IsMoving_RandomEvent());
+
+            isWMPlayerMoving = value;
+            player.IsMoving = value;
+        }
+    }
+
+    float rngEventDelayCurrent = 0;
 
     #region References
     public static WorldmapManager instance;
@@ -22,14 +42,32 @@ public class WorldmapManager : MonoBehaviour
         ShowEnterTownBtn(false);
     }
 
+    private void OnDisable()
+    {
+        IsWMPlayerMoving = false;
+    }
+
     public void MovePlayer()
     {
-        playerWaypoint.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        playerWaypoint.transform.position = new Vector3(playerWaypoint.transform.position.x, playerWaypoint.transform.position.y, 0);
-        player.MoveToWaypoint(playerWaypoint);
+        playerWaypoint.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0,0,10);
+        IsWMPlayerMoving = true;
     }
     public void ShowEnterTownBtn(bool state)
     {
         enterTownBtn.SetActive(state);
+    }
+
+    private IEnumerator IsMoving_RandomEvent()
+    {
+        yield return new WaitForSeconds(0.01f);
+        rngEventDelayCurrent += 0.01f;
+        if (rngEventDelayCurrent < rngEventDelay)
+        {
+            StartCoroutine(IsMoving_RandomEvent());
+        }else
+        {
+            rngEventDelayCurrent = 0;
+            GMBSceneManager.instance.ChangeScene(EventManager.instance.sceneEvent);
+        }
     }
 }

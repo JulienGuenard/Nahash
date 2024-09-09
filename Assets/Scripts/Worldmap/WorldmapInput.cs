@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WorldmapInput : MonoBehaviour
 {
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
         WorldmapManager.instance.MovePlayer();
     }

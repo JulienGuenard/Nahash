@@ -4,38 +4,27 @@ using UnityEngine;
 
 public class WorldmapPlayer : MonoBehaviour
 {
+    public GameObject player;
     public float speed;
 
-    GameObject waypoint;
-    bool isMoving;
+    bool isMoving; public bool IsMoving
+    { 
+        get { return isMoving; } 
+        set {  isMoving = value; } 
+    }
 
+    GameObject waypoint;
+
+    private void Start()
+    {
+        waypoint = WorldmapManager.instance.playerWaypoint;
+    }
     private void Update()
     {
         if (isMoving) Move();
     }
-
-    public void MoveToWaypoint(GameObject playerWaypoint)
-    {
-        waypoint = playerWaypoint;
-        isMoving = true;
-    }
-
     private void Move()
     {
-        transform.position = Vector3.MoveTowards(transform.position, waypoint.transform.position, speed);
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Town") WorldmapManager.instance.ShowEnterTownBtn(true);
-        if (collision.tag == "Waypoint")
-        {
-            isMoving = false;
-            waypoint.transform.position = new Vector3(999, 999, 999);
-        }
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.tag == "Town") WorldmapManager.instance.ShowEnterTownBtn(false);
+        player.transform.position = Vector3.MoveTowards(player.transform.position, waypoint.transform.position, speed);
     }
 }
