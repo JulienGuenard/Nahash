@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class ButtonInput : MonoBehaviour
 {
+    public EventObj nextEvent;
     public GameObject sceneOn;
 
     private void OnMouseDown()
     {
-        GMBSceneManager.instance.ChangeScene(sceneOn);
+        if (nextEvent != null) EventManager.instance.eventCurrent = nextEvent;
     }
 }

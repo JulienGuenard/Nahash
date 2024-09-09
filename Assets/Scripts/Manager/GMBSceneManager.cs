@@ -5,8 +5,25 @@ using UnityEngine;
 public class GMBSceneManager : MonoBehaviour
 {
     public List<GameObject> sceneList;
-    GameObject sceneCurrent;
-
+    GameObject sceneCurrent; public GameObject SceneCurrent
+    { 
+        get { return sceneCurrent; } 
+        set 
+        { 
+            sceneCurrent = value;
+            CameraManager.instance.ChangeCamera(sceneCurrent.name);
+            SetScene(sceneCurrent.name, true);
+        }
+    }
+    GameObject sceneLast; public GameObject SceneLast
+    {
+        get { return sceneLast; }
+        set
+        {
+            sceneLast = value;
+            SetScene(sceneLast.name, false);
+        }
+    }
     #region References
     public static GMBSceneManager instance;
 
@@ -21,27 +38,25 @@ public class GMBSceneManager : MonoBehaviour
         StartingScene();
     }
 
+    public void ChangeScene(GameObject sceneOn, EventObj eventNext)
+    {
+        SceneLast = sceneCurrent;
+        sceneCurrent.SetActive(false);
+        SceneCurrent = sceneOn;
+        sceneOn.SetActive(true);
+    }
+
     private void StartingScene()
     {
         foreach (GameObject scene in sceneList)
         {
-            if (scene.activeInHierarchy) { sceneCurrent = scene; break; }
+            if (scene.activeInHierarchy) { SceneCurrent = scene; break; }
         }
     }
 
-    public void ChangeScene(GameObject sceneOn)
+    private void SetScene(string sceneName, bool state)
     {
-        sceneCurrent.SetActive(false);
-        sceneOn.SetActive(true);
-
-        if (sceneOn.name == "SceneWorldmap")
-        {
-            Camera.main.orthographicSize = CameraManager.instance.camSizeWorldmap;
-            Camera.main.transform.position = new Vector3(0, -2.73f, -10);
-        }else
-        {
-            Camera.main.orthographicSize = CameraManager.instance.camSizeNormal;
-            Camera.main.transform.position = new Vector3(0, 0, -10);
-        }
+        if (sceneName == "SceneWorldmap" && state) WorldmapManager.instance.WorldmapEnable();
+        if (sceneName == "SceneWorldmap" && !state) WorldmapManager.instance.WorldmapDisable();
     }
 }

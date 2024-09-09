@@ -42,7 +42,11 @@ public class WorldmapManager : MonoBehaviour
         ShowEnterTownBtn(false);
     }
 
-    private void OnDisable()
+    public void WorldmapEnable()
+    {
+
+    }
+    public void WorldmapDisable()
     {
         IsWMPlayerMoving = false;
     }
@@ -67,7 +71,6 @@ public class WorldmapManager : MonoBehaviour
         }else
         {
             rngEventDelayCurrent = 0;
-            GMBSceneManager.instance.ChangeScene(EventManager.instance.sceneEvent);
         }
     }
 }
