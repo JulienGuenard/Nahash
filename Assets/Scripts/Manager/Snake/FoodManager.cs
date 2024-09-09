@@ -1,14 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class FoodManager : MonoBehaviour
 {
-    public InputAction inputAction;
-    [SerializeField] GameObject foodPrefab;
-
-    public int foodRemaining;
+    public GameObject foodPrefab;
 
     #region References
     public static FoodManager instance;
@@ -23,7 +19,7 @@ public class FoodManager : MonoBehaviour
     {
         Vector2 gridX = ArenaManager.instance.gridX;
         Vector2 gridY = ArenaManager.instance.gridY;
-        Transform gridTransform = ArenaManager.instance.gridTransform;
+        Transform gridTransform = ArenaManager.instance.GridTransform;
 
         int randX = Random.Range(Mathf.FloorToInt(gridX.x), Mathf.FloorToInt(gridX.y));
         int randY = Random.Range(Mathf.FloorToInt(gridY.x), Mathf.FloorToInt(gridY.y));

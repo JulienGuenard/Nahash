@@ -10,7 +10,7 @@ public class ScoreManager : MonoBehaviour
         get { return score; }
         set {
                 score = value;
-                UIManager.instance.scoreTxt.text = "Score : " + score.ToString();
+                UIManager.instance.ScoreTxt.text = "Score : " + score.ToString();
             }
     }
 

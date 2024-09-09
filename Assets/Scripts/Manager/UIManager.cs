@@ -5,7 +5,11 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    public TextMeshPro scoreTxt;
+    TextMeshPro scoreTxt; [HideInInspector] public TextMeshPro ScoreTxt
+    {
+        get { return scoreTxt; }
+        set { scoreTxt = value; }
+    } // AutoEnabler
 
     #region References
     public static UIManager instance;

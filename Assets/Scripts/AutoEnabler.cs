@@ -12,8 +12,8 @@ public class AutoEnabler : MonoBehaviour
     {
         switch (autoEnable)
         {
-            case AutoEnableEnum.score: { UIManager.instance.scoreTxt = GetComponent<TextMeshPro>(); break; }
-            case AutoEnableEnum.snakeGridTransform: { ArenaManager.instance.gridTransform = transform; break; }
+            case AutoEnableEnum.score: { UIManager.instance.ScoreTxt = GetComponent<TextMeshPro>(); break; }
+            case AutoEnableEnum.snakeGridTransform: { ArenaManager.instance.GridTransform = transform; break; }
             case AutoEnableEnum.CanPlayerPressDialogNext: { DialogManager.instance.CanPlayerPressDialogNext = false; break; }
         }
     }

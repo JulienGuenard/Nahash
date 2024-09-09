@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class ArenaManager : MonoBehaviour
 {
-    [SerializeField] private GameObject arenaGMB;
     public Vector2 gridX;
     public Vector2 gridY;
-    public Transform gridTransform;
+    Transform gridTransform; [HideInInspector] public Transform GridTransform
+    { 
+        get { return gridTransform; } 
+        set { gridTransform = value; }
+    } // AutoEnabler
 
     #region References
     public static ArenaManager instance;

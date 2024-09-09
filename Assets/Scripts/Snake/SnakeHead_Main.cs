@@ -51,7 +51,7 @@ public class SnakeHead_Main : MonoBehaviour
 
     void BodyCreate()
     {
-        Transform grid = ArenaManager.instance.gridTransform;
+        Transform grid = ArenaManager.instance.GridTransform;
         bodyList.Add(Instantiate(bodyPrefab, bodyLastPosition, Quaternion.identity, grid).GetComponent<SnakeBody_Main>());
     }
 

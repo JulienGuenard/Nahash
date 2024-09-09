@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class DialogManager : MonoBehaviour
 {
-    bool canPlayerPressDialogNext; public bool CanPlayerPressDialogNext
+    bool canPlayerPressDialogNext; [HideInInspector] public bool CanPlayerPressDialogNext // AutoEnabler
     {
         get { return canPlayerPressDialogNext; }
-        set
-        {
-            canPlayerPressDialogNext = value;
-        }
+        set { canPlayerPressDialogNext = value; }
     }
 
     GameObject sceneCurrent = null;
