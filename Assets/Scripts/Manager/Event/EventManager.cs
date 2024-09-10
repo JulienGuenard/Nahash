@@ -22,4 +22,14 @@ public class EventManager : MonoBehaviour
         if (instance == null) instance = this;
     }
     #endregion
+
+    public void EventEnable()
+    {
+        DialogManager.instance.CanPlayerPressDialogNext = true;
+    }
+
+    public void EventDisable()
+    {
+        DialogManager.instance.CanPlayerPressDialogNext = false;
+    }
 }

@@ -7,7 +7,11 @@ public class DialogManager : MonoBehaviour
     bool canPlayerPressDialogNext; public bool CanPlayerPressDialogNext // AutoEnabler
     {
         get { return canPlayerPressDialogNext; }
-        set { canPlayerPressDialogNext = value; }
+        set 
+        {
+            if (value)  StartCoroutine(DialogStart_InputDelay());
+            else        canPlayerPressDialogNext = value;
+        }
     }
 
     GameObject sceneCurrent = null;
@@ -33,7 +37,7 @@ public class DialogManager : MonoBehaviour
     {
         idCurrent = 0;
         DialogNext();
-        StartCoroutine(DialogStart_InputDelay());
+        CanPlayerPressDialogNext = true;
     }
     public void DialogNext()
     {
@@ -65,6 +69,6 @@ public class DialogManager : MonoBehaviour
     IEnumerator DialogStart_InputDelay()
     {
         yield return new WaitForSeconds(0.01f);
-        CanPlayerPressDialogNext = true;
+        canPlayerPressDialogNext = true;
     }
 }

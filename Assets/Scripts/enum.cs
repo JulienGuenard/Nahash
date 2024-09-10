@@ -5,5 +5,12 @@ public enum SceneName
     Event,
     Hero,
     Town,
-    Worldmap
+    Worldmap,
+    Last
+}
+public enum SceneHeroName
+{
+    None,
+    Inventory,
+    Skilltree
 }
