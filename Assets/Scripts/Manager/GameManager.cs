@@ -16,30 +16,10 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        PlayerInput();
+        if (Input.GetKeyDown(KeyCode.R)) GameReset();
     }
-
-    private void PlayerInput()
-    {
-        if (Input.GetKeyDown(KeyCode.R)) ResetGame();
-    }
-
-    public void Lose()
-    {
-
-    }
-
-    public void ResetGame()
+    private void GameReset()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-
-    public void SceneChangeManager(string sceneName, bool state)
-    {
-        if (sceneName == "SceneWorldmap" && state) WorldmapManager.instance.WorldmapEnable();
-        if (sceneName == "SceneWorldmap" && !state) WorldmapManager.instance.WorldmapDisable();
-
-        if (sceneName != "SceneEvent" && state) DialogManager.instance.CanPlayerPressDialogNext = false;
     }
 }

@@ -6,11 +6,16 @@ public class WMPlayerTrigger : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Town") WorldmapManager.instance.ShowEnterTownBtn(true);
+        if (collision.tag == "Town") 
+        {
+            TownObj townObj = collision.GetComponent<TownData>().townObj;
+            WorldmapManager.instance.ShowEnterTownBtn(true, townObj); 
+        }
+            
         if (collision.tag == "Waypoint") { WorldmapManager.instance.IsWMPlayerMoving = false; }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Town") WorldmapManager.instance.ShowEnterTownBtn(false);
+        if (collision.tag == "Town") WorldmapManager.instance.ShowEnterTownBtn(false, null);
     }
 }

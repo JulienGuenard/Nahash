@@ -1,74 +1,108 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SnakeHead_Main : MonoBehaviour
 {
-    [SerializeField] private GameObject bodyPrefab;
+    public GameObject bodyPrefab;
+    public List<SnakeBody_Main> bodyList;
+    public float moveSpeed;
 
-    [SerializeField] private float moveSpeed;
-    private Vector2 moveDirection;
-
-    [SerializeField] private List<SnakeBody_Main> bodyList;
+    private Vector2 moveDirection       = new Vector2(1, 0);
+    private Vector2 moveNextDirection   = new Vector2(1, 0);
     private Vector2 bodyLastPosition;
 
-    // Start is called before the first frame update
+    private bool isHit;
+
     void Start()
     {
-        Invoke("Move", moveSpeed);
-        moveDirection = new Vector2(1, 0);
+        StartCoroutine(Move());
+        TimeManager.instance.TimerStart();
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        PlayerInput();
+        Update_PlayerInput();
     }
 
-    void PlayerInput()
+    private void Update_PlayerInput()
     {
-        if (Input.GetAxisRaw("Horizontal") != 0 && moveDirection.x == 0)    moveDirection = new Vector2(Input.GetAxisRaw("Horizontal"), 0);
-        if (Input.GetAxisRaw("Vertical") != 0 && moveDirection.y == 0)      moveDirection = new Vector2(0, Input.GetAxisRaw("Vertical"));
+        float inputX = Input.GetAxisRaw("Horizontal");
+        float inputY = Input.GetAxisRaw("Vertical");
+
+        if (inputX != 0 && moveDirection.x == 0) moveNextDirection = new Vector2(inputX, 0);
+        if (inputY != 0 && moveDirection.y == 0) moveNextDirection = new Vector2(0, inputY);
     }
 
-    void Move()
+    private IEnumerator Move()
     {
-        MoveBody();
-        transform.position += (Vector3)moveDirection;
-        Invoke("Move", moveSpeed);
-    }
+        Move_CheckIn();
+        yield return new WaitForSeconds(0.05f);
+        Move_CheckOut();
 
-    void MoveBody()
+        if (isHit) yield break;
+
+        Move_Body();
+        Move_Head();
+        yield return new WaitForSeconds(moveSpeed);
+        StartCoroutine(Move());
+    }
+    private void        Move_CheckIn()
+    {
+        GetComponent<BoxCollider2D>().offset += moveNextDirection;
+    }
+    private void        Move_CheckOut()
+    {
+        GetComponent<BoxCollider2D>().offset = Vector2.zero;
+    }
+    private void        Move_Body()
     {
         bodyLastPosition = bodyList[bodyList.Count - 1].transform.position;
 
-        for (int i = bodyList.Count-1; i >= 0; i--)
+        for (int i = bodyList.Count - 1; i >= 0; i--)
         {
             if (i == 0) { bodyList[i].Move(transform.position); continue; }
             bodyList[i].Move(bodyList[i - 1].transform.position);
         }
     }
+    private void        Move_Head()
+    {
+        moveDirection = moveNextDirection;
+        transform.position += (Vector3)moveDirection;
+    }
 
-    void BodyCreate()
+    private void Eat(GameObject food)
+    {
+        Destroy(food);
+        Eat_BodyGrow();
+        ScoreManager.instance.Score += 1;
+        FoodManager.instance.FoodNew(transform.position);
+    }
+    private void Eat_BodyGrow()
     {
         Transform grid = ArenaManager.instance.GridTransform;
         bodyList.Add(Instantiate(bodyPrefab, bodyLastPosition, Quaternion.identity, grid).GetComponent<SnakeBody_Main>());
     }
 
+    private void Hit()
+    {
+        if (isHit) return;
+
+        PlayerManager.instance.Life--;
+        isHit = true;
+        StartCoroutine(HitDelay());
+    }
+    private IEnumerator HitDelay()
+    {
+        yield return new WaitForSeconds(1f);
+        isHit = false;
+        StartCoroutine(Move());
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Food")
-        {
-            Destroy(collision.gameObject);
-            BodyCreate();
-            ScoreManager.instance.Score += 1;
-            FoodManager.instance.FoodCreate(transform.position);
-        }
-
-        if (collision.tag == "Wall" || collision.tag == "Body")
-        {
-            GameManager.instance.Lose();
-            Destroy(this.gameObject);
-        }
+        if (collision.tag == "Food") { Eat(collision.gameObject); }
+        if (collision.tag == "Wall" 
+         || collision.tag == "Body") { Hit(); }
     }
 }

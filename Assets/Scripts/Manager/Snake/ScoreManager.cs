@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    private int score;
-    public int Score
+    private int score; public int Score
     {
         get { return score; }
         set {
@@ -25,10 +24,13 @@ public class ScoreManager : MonoBehaviour
 
     private void Update()
     {
-        if (score >= 6)
-        {
-            Score = 0;
-            DialogManager.instance.DialogNext();
-        }
+        Update_CheckScore();
+    }
+    private void Update_CheckScore()
+    {
+        if (score < 6) return;
+
+        Score = 0;
+        DialogManager.instance.DialogNext();
     }
 }

@@ -15,17 +15,24 @@ public class FoodManager : MonoBehaviour
     }
     #endregion
 
-    public void FoodCreate(Vector2 forbiddenPos)
+    public void     FoodNew(Vector2 forbiddenPos)
     {
-        Vector2 gridX = ArenaManager.instance.gridX;
-        Vector2 gridY = ArenaManager.instance.gridY;
-        Transform gridTransform = ArenaManager.instance.GridTransform;
+        Vector2 randomPos =             FoodNew_RandomPos(ArenaManager.instance.gridX, ArenaManager.instance.gridY);
+        if (randomPos == forbiddenPos)  FoodNew(forbiddenPos);
+        else                            FoodNew_Create(randomPos);
 
+    }
+
+    private Vector2 FoodNew_RandomPos(Vector2 gridX, Vector2 gridY)
+    {
         int randX = Random.Range(Mathf.FloorToInt(gridX.x), Mathf.FloorToInt(gridX.y));
         int randY = Random.Range(Mathf.FloorToInt(gridY.x), Mathf.FloorToInt(gridY.y));
 
-        Vector2 pos = new Vector2(randX, randY);
-        if (pos == forbiddenPos) { FoodCreate(forbiddenPos); return; }
-        Instantiate(foodPrefab, pos, Quaternion.identity, gridTransform);
+        return new Vector2(randX, randY);
+    }
+    private void    FoodNew_Create(Vector2 randomPos)
+    {
+        Transform gridTransform = ArenaManager.instance.GridTransform;
+        Instantiate(foodPrefab, randomPos, Quaternion.identity, gridTransform);
     }
 }

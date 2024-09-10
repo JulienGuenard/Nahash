@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class ArenaManager : MonoBehaviour
 {
-    public Vector2 gridX;
-    public Vector2 gridY;
-    Transform gridTransform; [HideInInspector] public Transform GridTransform
+    public Vector2 gridX, gridY;
+    Transform gridTransform; public Transform GridTransform
     { 
         get { return gridTransform; } 
         set { gridTransform = value; }

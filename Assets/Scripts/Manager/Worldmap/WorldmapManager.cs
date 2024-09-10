@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WorldmapManager : MonoBehaviour
 {
+    public List<EventObj> eventRNGList;
     public float rngEventDelay;
     public WorldmapPlayer player;
     public GameObject playerWaypoint;
@@ -39,7 +40,7 @@ public class WorldmapManager : MonoBehaviour
 
     private void Start()
     {
-        ShowEnterTownBtn(false);
+        ShowEnterTownBtn(false, null);
     }
 
     public void WorldmapEnable()
@@ -56,21 +57,23 @@ public class WorldmapManager : MonoBehaviour
         playerWaypoint.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0,0,10);
         IsWMPlayerMoving = true;
     }
-    public void ShowEnterTownBtn(bool state)
+    public void ShowEnterTownBtn(bool state, TownObj townObj)
     {
-        enterTownBtn.SetActive(state);
+                                enterTownBtn.SetActive(state);
+        if (townObj != null)    enterTownBtn.GetComponent<ButtonInput>().townNext = townObj;
     }
 
     private IEnumerator IsMoving_RandomEvent()
     {
         yield return new WaitForSeconds(0.01f);
         rngEventDelayCurrent += 0.01f;
-        if (rngEventDelayCurrent < rngEventDelay)
-        {
-            StartCoroutine(IsMoving_RandomEvent());
-        }else
-        {
-            rngEventDelayCurrent = 0;
-        }
+        if (rngEventDelayCurrent < rngEventDelay)   StartCoroutine(IsMoving_RandomEvent());
+        else                                        RandomEvent_New();
+    }
+    private void RandomEvent_New()
+    {
+        rngEventDelayCurrent = 0;
+        GMBSceneManager.instance.SceneNameCurrent = SceneName.Event;
+        EventManager.instance.EventCurrent = eventRNGList[Random.Range(0, eventRNGList.Count)];
     }
 }

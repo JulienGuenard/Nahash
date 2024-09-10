@@ -16,26 +16,30 @@ public class CameraManager : MonoBehaviour
     }
     #endregion
 
-    public void CameraChange(string sceneName)
+    public void     CameraChange(string sceneName)
     {
-        float camSize = camSizeNormal;
-        Vector3 camPos = new Vector3(0, 0, -10);
-
-        if (sceneName == "SceneWorldmap")
-        {
-            camSize = camSizeWorldmap;
-            camPos = new Vector3(0, -2.73f, -10);
-        }
-
-        CameraZoom(camSize);
-        CameraMove(camPos);
+        float camSize =     CameraChange_SetSize(sceneName);
+        Vector3 camPos =    CameraChange_SetZoom(sceneName);
+                            CameraZoom(camSize);
+                            CameraMove(camPos);
     }
-    public void CameraZoom(float val)
+    public void     CameraZoom(float val)
     {
         Camera.main.orthographicSize = val;
     }
-    public void CameraMove(Vector3 val)
+    public void     CameraMove(Vector3 val)
     {
         Camera.main.transform.position = val;
+    }
+
+    private float   CameraChange_SetSize(string sceneName)
+    {
+        if (sceneName == "SceneWorldmap")   return camSizeWorldmap;
+        else                                return camSizeNormal;
+    }
+    private Vector3 CameraChange_SetZoom(string sceneName)
+    {
+        if (sceneName == "SceneWorldmap")   return new Vector3(0, -2.73f, -10);
+        else                                return new Vector3(0, 0, -10);
     }
 }

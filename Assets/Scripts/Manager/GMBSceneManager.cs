@@ -5,27 +5,27 @@ using UnityEngine;
 public class GMBSceneManager : MonoBehaviour
 {
     public List<GameObject> sceneList;
-    GameObject sceneCurrent; public GameObject SceneCurrent
+
+    GameObject sceneCurrent;    public GameObject SceneCurrent
     { 
         get { return sceneCurrent; } 
         set 
         {
             if (sceneCurrent != null)   SceneLast = sceneCurrent;
-            if (sceneLast != null)      sceneLast.SetActive(false);
 
             sceneCurrent = value;
             sceneCurrent.SetActive(true);
-            CameraManager.instance.CameraChange(sceneCurrent.name);
-            GameManager.instance.SceneChangeManager(sceneCurrent.name, true);
+            SceneCurrent_Change();
         }
     }
-    GameObject sceneLast; public GameObject SceneLast
+    GameObject sceneLast;       public GameObject SceneLast
     {
         get { return sceneLast; }
         set
         {
             sceneLast = value;
-            GameManager.instance.SceneChangeManager(sceneLast.name, false);
+            sceneLast.SetActive(false);
+            SceneLast_Change();
         }
     }
     SceneName sceneNameCurrent; public SceneName SceneNameCurrent
@@ -33,10 +33,12 @@ public class GMBSceneManager : MonoBehaviour
         get { return sceneNameCurrent; }
         set
         {
+            if (value == SceneName.None) return;
+
             sceneNameCurrent = value;
+
             switch (sceneNameCurrent)
             {
-                case SceneName.None: break;
                 case SceneName.Accueil:     SceneCurrent = sceneList[0]; break;
                 case SceneName.Event:       SceneCurrent = sceneList[1]; break;
                 case SceneName.Hero:        SceneCurrent = sceneList[2]; break;
@@ -45,6 +47,7 @@ public class GMBSceneManager : MonoBehaviour
             }
         }
     }
+
     #region References
     public static GMBSceneManager instance;
 
@@ -56,19 +59,25 @@ public class GMBSceneManager : MonoBehaviour
 
     private void Start()
     {
-        SceneStart();
+        Start_SceneStart();
     }
 
-    public void SceneWorldmap()
-    {
-        SceneCurrent = sceneList[4];
-    }
-
-    private void SceneStart()
+    private void Start_SceneStart()
     {
         foreach (GameObject scene in sceneList)
         {
             if (scene.activeInHierarchy) { SceneCurrent = scene; break; }
         }
+    }
+    private void SceneCurrent_Change()
+    {
+        CameraManager.instance.CameraChange(sceneCurrent.name);
+
+        if (sceneCurrent.name == "SceneWorldmap") WorldmapManager.instance.WorldmapEnable();
+    }
+    private void SceneLast_Change()
+    {
+        if (sceneLast.name == "SceneWorldmap")  WorldmapManager.instance.WorldmapDisable();
+        if (sceneLast.name == "SceneEvent")     DialogManager.instance.CanPlayerPressDialogNext = false;
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DialogManager : MonoBehaviour
 {
-    bool canPlayerPressDialogNext; [HideInInspector] public bool CanPlayerPressDialogNext // AutoEnabler
+    bool canPlayerPressDialogNext; public bool CanPlayerPressDialogNext // AutoEnabler
     {
         get { return canPlayerPressDialogNext; }
         set { canPlayerPressDialogNext = value; }
@@ -24,6 +24,8 @@ public class DialogManager : MonoBehaviour
 
     private void Update()
     {
+        if (!canPlayerPressDialogNext) return;
+
         if (Input.GetKeyDown(KeyCode.Mouse0) && canPlayerPressDialogNext) DialogNext();
     }
 
@@ -35,23 +37,29 @@ public class DialogManager : MonoBehaviour
     }
     public void DialogNext()
     {
-        EventObj eventCurrent = EventManager.instance.EventCurrent;
-
-        if (idCurrent >= eventCurrent.narrativeList.Count) { DialogEnd(eventCurrent); return; }
-
-        if (sceneCurrent != null) Destroy(sceneCurrent);
-
         CanPlayerPressDialogNext = true;
+
+        EventObj eventCurrent = EventManager.instance.EventCurrent;
+        int narrativeListCount = eventCurrent.narrativeList.Count;
+
+        if (idCurrent >= narrativeListCount)    DialogNext_End(eventCurrent);
+        else                                    DialogNext_New(eventCurrent);
+    }
+
+    private void DialogNext_New(EventObj eventCurrent)
+    {
+        if (sceneCurrent != null) Destroy(sceneCurrent);
 
         GameObject sceneGMB = eventCurrent.narrativeList[idCurrent].sceneNarrative;
         sceneCurrent = Instantiate(sceneGMB, GMBSceneManager.instance.SceneCurrent.transform);
         idCurrent++;
     }
-
-    private void DialogEnd(EventObj eventCurrent)
+    private void DialogNext_End(EventObj eventCurrent)
     {
-        if (eventCurrent.eventNext == null) { GMBSceneManager.instance.SceneNameCurrent = eventCurrent.sceneNext; }
-        else EventManager.instance.EventCurrent = eventCurrent.eventNext;
+        EventObj eventNext = eventCurrent.eventNext;
+
+        if (eventNext == null)  GMBSceneManager.instance.SceneNameCurrent = eventCurrent.sceneNext;
+        else                    EventManager.instance.EventCurrent = eventNext;
     }
 
     IEnumerator DialogStart_InputDelay()
