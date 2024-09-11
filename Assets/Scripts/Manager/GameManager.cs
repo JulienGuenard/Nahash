@@ -18,6 +18,12 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R)) GameReset();
     }
+
+    public void Lose()
+    {
+        GameReset();
+    }
+
     private void GameReset()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

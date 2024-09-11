@@ -172,7 +172,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bodyPrefab: {fileID: 7457756676032468256, guid: d5b838b6c1b053d46a7c18e898fdf901, type: 3}
-  moveSpeed: 0.2
   bodyList:
   - {fileID: 0}
   - {fileID: 0}
+  moveSpeed: 0.2
+  hitDelay: 1

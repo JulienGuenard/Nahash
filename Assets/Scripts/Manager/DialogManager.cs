@@ -41,8 +41,6 @@ public class DialogManager : MonoBehaviour
     }
     public void DialogNext()
     {
-        CanPlayerPressDialogNext = true;
-
         EventObj eventCurrent = EventManager.instance.EventCurrent;
         int narrativeListCount = eventCurrent.narrativeList.Count;
 

@@ -27,9 +27,13 @@ public class EventManager : MonoBehaviour
     {
         DialogManager.instance.CanPlayerPressDialogNext = true;
     }
-
     public void EventDisable()
     {
         DialogManager.instance.CanPlayerPressDialogNext = false;
+    }
+    public void Worldmap_RandomEvent(List<EventObj> eventRNGList)
+    {
+        GMBSceneManager.instance.SceneNameCurrent = SceneName.Event;
+        EventCurrent = eventRNGList[Random.Range(0, eventRNGList.Count)];
     }
 }

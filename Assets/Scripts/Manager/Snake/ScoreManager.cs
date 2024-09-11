@@ -26,11 +26,20 @@ public class ScoreManager : MonoBehaviour
     {
         Update_CheckScore();
     }
+
+    public void ScoreReset()
+    {
+        Score = 0;
+    }
+
     private void Update_CheckScore()
     {
         if (score < 6) return;
 
-        Score = 0;
+        ScoreReset();
         DialogManager.instance.DialogNext();
+        DialogManager.instance.CanPlayerPressDialogNext = true;
+        TimeManager.instance.TimeEnd();
     }
+
 }

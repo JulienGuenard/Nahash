@@ -652,7 +652,7 @@ GameObject:
   - component: {fileID: 6266398314303183883}
   - component: {fileID: 5188011314299212023}
   - component: {fileID: 8418929950288270138}
-  - component: {fileID: 627795167914351912}
+  - component: {fileID: 1927742445493653031}
   m_Layer: 0
   m_Name: Life
   m_TagString: Untagged
@@ -814,7 +814,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 5188011314299212023}
   m_maskType: 0
---- !u!114 &627795167914351912
+--- !u!114 &1927742445493653031
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

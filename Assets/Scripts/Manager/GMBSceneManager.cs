@@ -87,7 +87,6 @@ public class GMBSceneManager : MonoBehaviour
         }
     }
 
-
     #region References
     public static GMBSceneManager instance;
 
@@ -110,10 +109,6 @@ public class GMBSceneManager : MonoBehaviour
             if (scene.activeInHierarchy) { SceneCurrent = scene; break; }
         }
     }
-    private void Start_SceneHeroStart()
-    {
-        SceneHeroCurrent = sceneHeroList[0];
-    }
     private void SceneCurrent_Change()
     {
         CameraManager.instance.CameraChange(sceneCurrent.name);
@@ -125,5 +120,10 @@ public class GMBSceneManager : MonoBehaviour
     {
         if (sceneLast.name == "SceneWorldmap")  WorldmapManager.instance.WorldmapDisable();
         if (sceneLast.name == "SceneEvent")     DialogManager.instance.CanPlayerPressDialogNext = false;
+    }
+
+    private void Start_SceneHeroStart()
+    {
+        SceneHeroCurrent = sceneHeroList[0];
     }
 }

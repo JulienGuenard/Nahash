@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-    public float camSizeNormal;
-    public float camSizeWorldmap;
+    public float camSizeNormal, camSizeWorldmap;
 
     #region References
     public static CameraManager instance;

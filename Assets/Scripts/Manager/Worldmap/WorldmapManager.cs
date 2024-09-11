@@ -10,9 +10,9 @@ public class WorldmapManager : MonoBehaviour
     public GameObject playerWaypoint;
     public GameObject enterTownBtn;
 
-    bool isWMPlayerMoving; public bool IsWMPlayerMoving
+    bool isPlayerMoving; public bool IsPlayerMoving
     {
-        get { return isWMPlayerMoving; }
+        get { return isPlayerMoving; }
         set
         {
             if (!value)
@@ -20,9 +20,9 @@ public class WorldmapManager : MonoBehaviour
                 StopAllCoroutines();
                 playerWaypoint.transform.position = new Vector3(999, 999, 999);
             }
-            if (value && !isWMPlayerMoving) StartCoroutine(IsMoving_RandomEvent());
+            if (value && !isPlayerMoving) StartCoroutine(IsPlayerMoving_RandomEvent());
 
-            isWMPlayerMoving = value;
+            isPlayerMoving = value;
             player.IsMoving = value;
         }
     }
@@ -39,8 +39,8 @@ public class WorldmapManager : MonoBehaviour
     #endregion
 
     private void Start()
-    {
-        ShowEnterTownBtn(false, null);
+    { 
+        Player_ExitTown();
     }
 
     public void WorldmapEnable()
@@ -49,31 +49,38 @@ public class WorldmapManager : MonoBehaviour
     }
     public void WorldmapDisable()
     {
-        IsWMPlayerMoving = false;
+        IsPlayerMoving = false;
     }
 
-    public void MovePlayer()
+    public void WMClick_PlayerMove()
     {
-        playerWaypoint.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0,0,10);
-        IsWMPlayerMoving = true;
+        Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, 10);
+        playerWaypoint.transform.position = pos;
+        IsPlayerMoving = true;
     }
-    public void ShowEnterTownBtn(bool state, TownObj townObj)
+    public void Player_EnterTown(GameObject town)
     {
-                                enterTownBtn.SetActive(state);
-        if (townObj != null)    enterTownBtn.GetComponent<ButtonInput>().townNext = townObj;
+        UIManager.instance.EnterTownBtn.SetActive(true);
+        Debug.Log(town.name);
+        TownObj townObj = town.GetComponent<TownData>().townObj;
+
+        enterTownBtn.GetComponent<ButtonInput>().townNext = townObj;
+    }
+    public void Player_ExitTown()
+    {
+        UIManager.instance.EnterTownBtn.SetActive(false);
     }
 
-    private IEnumerator IsMoving_RandomEvent()
+    private IEnumerator IsPlayerMoving_RandomEvent()
     {
         yield return new WaitForSeconds(0.01f);
         rngEventDelayCurrent += 0.01f;
-        if (rngEventDelayCurrent < rngEventDelay)   StartCoroutine(IsMoving_RandomEvent());
+        if (rngEventDelayCurrent < rngEventDelay)   StartCoroutine(IsPlayerMoving_RandomEvent());
         else                                        RandomEvent_New();
     }
-    private void RandomEvent_New()
+    private void        RandomEvent_New()
     {
         rngEventDelayCurrent = 0;
-        GMBSceneManager.instance.SceneNameCurrent = SceneName.Event;
-        EventManager.instance.EventCurrent = eventRNGList[Random.Range(0, eventRNGList.Count)];
+        EventManager.instance.Worldmap_RandomEvent(eventRNGList);
     }
 }

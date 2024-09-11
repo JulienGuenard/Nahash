@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 public class TimeManager : MonoBehaviour
 {
@@ -11,10 +10,10 @@ public class TimeManager : MonoBehaviour
     {
         get { return timeLeft; }
         set 
-        { 
+        {
             timeLeft = value;
-            UIManager.instance.TimeTxt.text = "Time : " + timeLeft;
-            if (timeLeft < 0) TimeEnd();
+            if (timeLeft <= 950)    Timeleft_Update();
+            if (timeLeft <= 0)      Timeleft_Over();
         }
     }
 
@@ -27,24 +26,35 @@ public class TimeManager : MonoBehaviour
     }
     #endregion
 
-    public void TimerStart()
+    public void TimeStart()
     {
         TimeLeft = timeMax;
-        StartCoroutine(TimeDecrease());
+        StartCoroutine(TimeStart_Decreasing());
+    }
+    public void TimeEnd()
+    {
+        timeLeft = 999;
     }
 
-    private IEnumerator TimeDecrease()
+    private void Timeleft_Update()
+    {
+        UIManager.instance.TimeTxt.text = "Time : " + timeLeft;
+    }
+    private void Timeleft_Over()
+    {
+        TimeEnd();
+        DialogManager.instance.DialogNext();
+        DialogManager.instance.CanPlayerPressDialogNext = true;
+        ScoreManager.instance.ScoreReset();
+    }
+
+    private IEnumerator TimeStart_Decreasing()
     {
         yield return new WaitForSeconds(1f);
         TimeLeft--;
 
         if (TimeLeft > 950) yield break;
 
-        StartCoroutine(TimeDecrease());
-    }
-    private void        TimeEnd()
-    {
-        DialogManager.instance.DialogNext();
-        timeLeft = 999;
+        StartCoroutine(TimeStart_Decreasing());
     }
 }

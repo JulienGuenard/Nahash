@@ -6,6 +6,6 @@ public class WorldmapInput : MonoBehaviour
 {
     public void OnMouseDown()
     {
-        WorldmapManager.instance.MovePlayer();
+        WorldmapManager.instance.WMClick_PlayerMove();
     }
 }

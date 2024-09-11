@@ -7,18 +7,16 @@ public class SnakeHead_Main : MonoBehaviour
 {
     public GameObject bodyPrefab;
     public List<SnakeBody_Main> bodyList;
-    public float moveSpeed;
+    public float moveSpeed, hitDelay;
 
-    private Vector2 moveDirection       = new Vector2(1, 0);
-    private Vector2 moveNextDirection   = new Vector2(1, 0);
-    private Vector2 bodyLastPosition;
-
+    private Vector2 moveDirection, moveNextDirection, bodyLastPosition;
     private bool isHit;
 
     void Start()
     {
+        Input_SnakeDirection(1, 0);
         StartCoroutine(Move());
-        TimeManager.instance.TimerStart();
+        TimeManager.instance.TimeStart();
     }
     private void Update()
     {
@@ -30,6 +28,10 @@ public class SnakeHead_Main : MonoBehaviour
         float inputX = Input.GetAxisRaw("Horizontal");
         float inputY = Input.GetAxisRaw("Vertical");
 
+        Input_SnakeDirection(inputX, inputY);
+    }
+    private void Input_SnakeDirection(float inputX, float inputY)
+    {
         if (inputX != 0 && moveDirection.x == 0) moveNextDirection = new Vector2(inputX, 0);
         if (inputY != 0 && moveDirection.y == 0) moveNextDirection = new Vector2(0, inputY);
     }
@@ -88,21 +90,21 @@ public class SnakeHead_Main : MonoBehaviour
     {
         if (isHit) return;
 
-        PlayerManager.instance.Life--;
+        PlayerManager.instance.LifeCurrent--;
         isHit = true;
         StartCoroutine(HitDelay());
     }
     private IEnumerator HitDelay()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(hitDelay);
         isHit = false;
         StartCoroutine(Move());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Food") { Eat(collision.gameObject); }
+        if (collision.tag == "Food") { Eat(collision.gameObject); return; }
         if (collision.tag == "Wall" 
-         || collision.tag == "Body") { Hit(); }
+         || collision.tag == "Body") { Hit(); return; }
     }
 }
