@@ -4,7 +4,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableOBJ/EventObj", order = 1)]
 public class EventObj : ScriptableObject
 {
-    public List<NarrativeObj> narrativeList;
+    public List<EvtSceneStruct> evtSceneList;
     public EventObj eventNext;
     public SceneName sceneNext;
+
 }

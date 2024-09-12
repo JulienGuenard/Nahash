@@ -10,7 +10,7 @@ public class EventManager : MonoBehaviour
         set 
         { 
             eventCurrent = value;
-            DialogManager.instance.DialogStart();
+            EvtSceneManager.instance.EventCurrent = value;
         }
     }
 
@@ -25,12 +25,13 @@ public class EventManager : MonoBehaviour
 
     public void EventEnable()
     {
-        DialogManager.instance.CanPlayerPressDialogNext = true;
+        EvtSceneManager.instance.EvtSceneEnable();
     }
     public void EventDisable()
     {
-        DialogManager.instance.CanPlayerPressDialogNext = false;
+        EvtSceneManager.instance.EvtSceneDisable();
     }
+
     public void Worldmap_RandomEvent(List<EventObj> eventRNGList)
     {
         GMBSceneManager.instance.SceneNameCurrent = SceneName.Event;

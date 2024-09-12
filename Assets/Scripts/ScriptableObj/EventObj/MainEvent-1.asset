@@ -12,11 +12,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f305b545501e3e04194503ad8859468c, type: 3}
   m_Name: MainEvent-1
   m_EditorClassIdentifier: 
-  narrativeList:
-  - {fileID: 11400000, guid: bb91d8db0e7e4e242b14052bf371af56, type: 2}
-  - {fileID: 11400000, guid: 023c0ace79c514644a8fca1119e84915, type: 2}
-  - {fileID: 11400000, guid: 991a2de155e1dab45859699a5a0c2096, type: 2}
-  - {fileID: 11400000, guid: 259d41cd06fe970479f32741a9172c3f, type: 2}
-  - {fileID: 11400000, guid: 290bc813044fb444382721fdfa8cc753, type: 2}
+  evtSceneList:
+  - gmb: {fileID: 6138185418471125062, guid: c1d43be24256c5d43983a8a99e68fe49, type: 3}
+    dialogList:
+    - dialogName: Roi Bhodin
+      txt: "Elvin, mon gar\xE7on, approche, je dois te parler."
+      voice: {fileID: 11400000, guid: 724e242d38081b441a58bc2b2a2aa9be, type: 2}
+    snakeList: []
+  - gmb: {fileID: 6138185418471125062, guid: c1d43be24256c5d43983a8a99e68fe49, type: 3}
+    dialogList:
+    - dialogName: Prince Elvin
+      txt: "Oui p\xE8re ?"
+      voice: {fileID: 11400000, guid: 8b8b9c6e85938aa48b4f74a139b187db, type: 2}
+    snakeList: []
+  - gmb: {fileID: 6138185418471125062, guid: c1d43be24256c5d43983a8a99e68fe49, type: 3}
+    dialogList:
+    - dialogName: Roi Bhodin
+      txt: Je vais te confier la magie de notre peuple, la transformation en serpent.
+      voice: {fileID: 11400000, guid: 724e242d38081b441a58bc2b2a2aa9be, type: 2}
+    snakeList: []
+  - gmb: {fileID: 6138185418471125062, guid: c1d43be24256c5d43983a8a99e68fe49, type: 3}
+    dialogList:
+    - dialogName: Prince Elvin
+      txt: "D\xE9j\xE0 ? Ne faut-il pas suivre un entrainement appropri\xE9 ?"
+      voice: {fileID: 11400000, guid: 8b8b9c6e85938aa48b4f74a139b187db, type: 2}
+    snakeList: []
+  - gmb: {fileID: 6138185418471125062, guid: c1d43be24256c5d43983a8a99e68fe49, type: 3}
+    dialogList:
+    - dialogName: Roi Bhodin
+      txt: "Tu es pr\xEAt, et tu vas devoir partir en dehors do royaume pour accomplir
+        une importante mission."
+      voice: {fileID: 11400000, guid: 724e242d38081b441a58bc2b2a2aa9be, type: 2}
+    snakeList: []
+  - gmb: {fileID: 6138185418471125062, guid: c1d43be24256c5d43983a8a99e68fe49, type: 3}
+    dialogList:
+    - dialogName: Prince Elvin
+      txt: "Laquelle p\xE8re ?"
+      voice: {fileID: 11400000, guid: 8b8b9c6e85938aa48b4f74a139b187db, type: 2}
+    snakeList: []
+  - gmb: {fileID: 6138185418471125062, guid: c1d43be24256c5d43983a8a99e68fe49, type: 3}
+    dialogList:
+    - dialogName: Roi Bhodin
+      txt: "Trouver un art\xE9fact capable de nous garantir la paix, fils."
+      voice: {fileID: 11400000, guid: 724e242d38081b441a58bc2b2a2aa9be, type: 2}
+    snakeList: []
   eventNext: {fileID: 0}
   sceneNext: 5

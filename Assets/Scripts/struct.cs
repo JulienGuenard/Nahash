@@ -1,10 +1,26 @@
+using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable] public struct EvtSceneStruct
+{
+    public GameObject gmb;
+    public List<Sprite> spriteChangeList;
+    public List<DialogStruct> dialogList;
+    public List<SnakeStruct> snakeList;
+}
 [System.Serializable] public struct DialogStruct
 {
-    public string txt;
-    public VoiceObj dialogVoicePreset;
+    public string dialogName;
+    [TextArea] public string txt;
+    public VoiceObj voice;
+}
+[System.Serializable] public struct VoiceStruct
+{
     public AudioClip sfx;
-    public float speed, pitch, pitchRand, spaceDelay, virguleDelay, pointDelay, bubbleDelay;
-    public int hideNumber;
+    public float speed, pitch, pitchRand, spaceDelay, virguleDelay, pointDelay;
+}
+[System.Serializable] public struct SnakeStruct
+{
+    public int scoreGoal;
+    public int timeToWait;
 }

@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class WMPlayerTrigger : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    WorldmapManager worldmapM;
+    private void Start()
     {
-        if (collision.tag == "Town")        { WorldmapManager.instance.Player_EnterTown(collision.gameObject);  }
-        if (collision.tag == "Waypoint")    { WorldmapManager.instance.IsPlayerMoving = false; }
+        worldmapM = WorldmapManager.instance;
     }
-    private void OnTriggerExit2D(Collider2D collision)
+
+    private void OnTriggerEnter2D(Collider2D c)
     {
-        if (collision.tag == "Town") WorldmapManager.instance.Player_ExitTown();
+        if (c.tag == "Town")        { worldmapM.TownAtRange = c.GetComponent<TownData>().townObj; }
+        if (c.tag == "Waypoint")    { worldmapM.IsPlayerMoving = false; }
+    }
+    private void OnTriggerExit2D(Collider2D c)
+    {
+        if (c.tag == "Town") worldmapM.TownAtRange = null;
     }
 }
