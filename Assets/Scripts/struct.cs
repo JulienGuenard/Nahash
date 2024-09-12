@@ -3,6 +3,7 @@ using UnityEngine;
 
 [System.Serializable] public struct EvtSceneStruct
 {
+    public string evtSceneName;
     public GameObject gmb;
     public List<Sprite> spriteChangeList;
     public List<DialogStruct> dialogList;
