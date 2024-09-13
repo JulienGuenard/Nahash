@@ -13,10 +13,68 @@ MonoBehaviour:
   m_Name: MainEvent-2
   m_EditorClassIdentifier: 
   evtSceneList:
-  - {fileID: 11400000, guid: bb91d8db0e7e4e242b14052bf371af56, type: 2}
-  - {fileID: 11400000, guid: 023c0ace79c514644a8fca1119e84915, type: 2}
-  - {fileID: 11400000, guid: 991a2de155e1dab45859699a5a0c2096, type: 2}
-  - {fileID: 11400000, guid: 259d41cd06fe970479f32741a9172c3f, type: 2}
-  - {fileID: 11400000, guid: 290bc813044fb444382721fdfa8cc753, type: 2}
+  - evtSceneName: Dialog
+    gmb: {fileID: 6138185418471125062, guid: c1d43be24256c5d43983a8a99e68fe49, type: 3}
+    spriteChangeList: []
+    dialogList:
+    - dialogName: Roi Bhodin
+      txt: "Elvin, no sabemos qu\xE9 pasar...\r"
+      character: {fileID: 11400000, guid: ca8d24899e9bb4d4097c36d5ab401257, type: 2}
+      voice: {fileID: 11400000, guid: 724e242d38081b441a58bc2b2a2aa9be, type: 2}
+    snakeList: []
+  - evtSceneName: Dialog
+    gmb: {fileID: 6138185418471125062, guid: c1d43be24256c5d43983a8a99e68fe49, type: 3}
+    spriteChangeList: []
+    dialogList:
+    - dialogName: Prince Elvin
+      txt: "Qu\xE9\xE9\xE9\xE9 ???\r"
+      character: {fileID: 11400000, guid: 9723f8a17e5e24c468d86a185f398ba9, type: 2}
+      voice: {fileID: 11400000, guid: 8b8b9c6e85938aa48b4f74a139b187db, type: 2}
+    snakeList: []
+  - evtSceneName: Dialog
+    gmb: {fileID: 6138185418471125062, guid: c1d43be24256c5d43983a8a99e68fe49, type: 3}
+    spriteChangeList: []
+    dialogList:
+    - dialogName: Roi Bhodin
+      txt: "T\xE9 fisto del so papa\r"
+      character: {fileID: 11400000, guid: ca8d24899e9bb4d4097c36d5ab401257, type: 2}
+      voice: {fileID: 11400000, guid: 724e242d38081b441a58bc2b2a2aa9be, type: 2}
+    snakeList: []
+  - evtSceneName: Dialog
+    gmb: {fileID: 6138185418471125062, guid: c1d43be24256c5d43983a8a99e68fe49, type: 3}
+    spriteChangeList: []
+    dialogList:
+    - dialogName: Prince Elvin
+      txt: "Qu\xE9 c\xE9 dice, conardo ?\r"
+      character: {fileID: 11400000, guid: 9723f8a17e5e24c468d86a185f398ba9, type: 2}
+      voice: {fileID: 11400000, guid: 8b8b9c6e85938aa48b4f74a139b187db, type: 2}
+    snakeList: []
+  - evtSceneName: Dialog
+    gmb: {fileID: 6138185418471125062, guid: c1d43be24256c5d43983a8a99e68fe49, type: 3}
+    spriteChangeList: []
+    dialogList:
+    - dialogName: Roi Bhodin
+      txt: "Ta mama y ta papa prefero qu\xE9 tu parta de la casa.\r"
+      character: {fileID: 11400000, guid: ca8d24899e9bb4d4097c36d5ab401257, type: 2}
+      voice: {fileID: 11400000, guid: 724e242d38081b441a58bc2b2a2aa9be, type: 2}
+    snakeList: []
+  - evtSceneName: Dialog
+    gmb: {fileID: 6138185418471125062, guid: c1d43be24256c5d43983a8a99e68fe49, type: 3}
+    spriteChangeList: []
+    dialogList:
+    - dialogName: Prince Elvin
+      txt: "Fucko\r"
+      character: {fileID: 11400000, guid: 9723f8a17e5e24c468d86a185f398ba9, type: 2}
+      voice: {fileID: 11400000, guid: 8b8b9c6e85938aa48b4f74a139b187db, type: 2}
+    snakeList: []
+  - evtSceneName: Dialog
+    gmb: {fileID: 6138185418471125062, guid: c1d43be24256c5d43983a8a99e68fe49, type: 3}
+    spriteChangeList: []
+    dialogList:
+    - dialogName: Roi Bhodin
+      txt: "Te trouva una bambina en la savana.\r"
+      character: {fileID: 11400000, guid: ca8d24899e9bb4d4097c36d5ab401257, type: 2}
+      voice: {fileID: 11400000, guid: 724e242d38081b441a58bc2b2a2aa9be, type: 2}
+    snakeList: []
   eventNext: {fileID: 0}
   sceneNext: 4

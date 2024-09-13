@@ -13,25 +13,31 @@ MonoBehaviour:
   m_Name: Intro
   m_EditorClassIdentifier: 
   evtSceneList:
-  - gmb: {fileID: 2619236681368861603, guid: bf884a80e906452409fb86b88ec9c160, type: 3}
+  - evtSceneName: Dialog
+    gmb: {fileID: 2619236681368861603, guid: bf884a80e906452409fb86b88ec9c160, type: 3}
     spriteChangeList: []
     dialogList:
     - dialogName: Roi
       txt: Bienvenue ! 1
+      character: {fileID: 0}
       voice: {fileID: 11400000, guid: 724e242d38081b441a58bc2b2a2aa9be, type: 2}
     snakeList: []
-  - gmb: {fileID: 2619236681368861603, guid: bf884a80e906452409fb86b88ec9c160, type: 3}
+  - evtSceneName: Dialog
+    gmb: {fileID: 2619236681368861603, guid: bf884a80e906452409fb86b88ec9c160, type: 3}
     spriteChangeList: []
     dialogList:
     - dialogName: Roi
       txt: Bienvenue ! 2
+      character: {fileID: 0}
       voice: {fileID: 11400000, guid: 724e242d38081b441a58bc2b2a2aa9be, type: 2}
     snakeList: []
-  - gmb: {fileID: 2619236681368861603, guid: bf884a80e906452409fb86b88ec9c160, type: 3}
+  - evtSceneName: Dialog
+    gmb: {fileID: 2619236681368861603, guid: bf884a80e906452409fb86b88ec9c160, type: 3}
     spriteChangeList: []
     dialogList:
     - dialogName: Roi
       txt: Bienvenue ! 3
+      character: {fileID: 0}
       voice: {fileID: 11400000, guid: 724e242d38081b441a58bc2b2a2aa9be, type: 2}
     snakeList: []
   eventNext: {fileID: 11400000, guid: 1afc2a798cda5ee458de3646579f715c, type: 2}

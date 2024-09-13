@@ -14,4 +14,3 @@ public enum SceneHeroName
     Inventory,
     Skilltree
 }
-public enum Language { French, English, Spanish }
