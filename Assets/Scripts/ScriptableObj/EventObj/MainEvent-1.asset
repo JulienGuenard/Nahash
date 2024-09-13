@@ -19,6 +19,7 @@ MonoBehaviour:
     dialogList:
     - dialogName: Roi Bhodin
       txt: "Elvin, mon gar\xE7on, approche, je dois te parler."
+      character: {fileID: 11400000, guid: ca8d24899e9bb4d4097c36d5ab401257, type: 2}
       voice: {fileID: 11400000, guid: 724e242d38081b441a58bc2b2a2aa9be, type: 2}
     snakeList: []
   - evtSceneName: Dialog
@@ -27,6 +28,7 @@ MonoBehaviour:
     dialogList:
     - dialogName: Prince Elvin
       txt: "Oui p\xE8re ?"
+      character: {fileID: 11400000, guid: 9723f8a17e5e24c468d86a185f398ba9, type: 2}
       voice: {fileID: 11400000, guid: 8b8b9c6e85938aa48b4f74a139b187db, type: 2}
     snakeList: []
   - evtSceneName: Dialog
@@ -35,6 +37,7 @@ MonoBehaviour:
     dialogList:
     - dialogName: Roi Bhodin
       txt: Je vais te confier la magie de notre peuple, la transformation en serpent.
+      character: {fileID: 11400000, guid: ca8d24899e9bb4d4097c36d5ab401257, type: 2}
       voice: {fileID: 11400000, guid: 724e242d38081b441a58bc2b2a2aa9be, type: 2}
     snakeList: []
   - evtSceneName: Dialog
@@ -43,6 +46,7 @@ MonoBehaviour:
     dialogList:
     - dialogName: Prince Elvin
       txt: "D\xE9j\xE0 ? Ne faut-il pas suivre un entrainement appropri\xE9 ?"
+      character: {fileID: 11400000, guid: 9723f8a17e5e24c468d86a185f398ba9, type: 2}
       voice: {fileID: 11400000, guid: 8b8b9c6e85938aa48b4f74a139b187db, type: 2}
     snakeList: []
   - evtSceneName: Dialog
@@ -52,6 +56,7 @@ MonoBehaviour:
     - dialogName: Roi Bhodin
       txt: "Tu es pr\xEAt, et tu vas devoir partir en dehors do royaume pour accomplir
         une importante mission."
+      character: {fileID: 11400000, guid: ca8d24899e9bb4d4097c36d5ab401257, type: 2}
       voice: {fileID: 11400000, guid: 724e242d38081b441a58bc2b2a2aa9be, type: 2}
     snakeList: []
   - evtSceneName: Dialog
@@ -60,6 +65,7 @@ MonoBehaviour:
     dialogList:
     - dialogName: Prince Elvin
       txt: "Laquelle p\xE8re ?"
+      character: {fileID: 11400000, guid: 9723f8a17e5e24c468d86a185f398ba9, type: 2}
       voice: {fileID: 11400000, guid: 8b8b9c6e85938aa48b4f74a139b187db, type: 2}
     snakeList: []
   - evtSceneName: Dialog
@@ -68,6 +74,7 @@ MonoBehaviour:
     dialogList:
     - dialogName: Roi Bhodin
       txt: "Trouver un art\xE9fact capable de nous garantir la paix, fils."
+      character: {fileID: 11400000, guid: ca8d24899e9bb4d4097c36d5ab401257, type: 2}
       voice: {fileID: 11400000, guid: 724e242d38081b441a58bc2b2a2aa9be, type: 2}
     snakeList: []
   eventNext: {fileID: 0}

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable] public struct EvtSceneStruct
+[System.Serializable] public class EvtSceneStruct
 {
     public string evtSceneName;
     public GameObject gmb;
@@ -9,10 +9,11 @@ using UnityEngine;
     public List<DialogStruct> dialogList;
     public List<SnakeStruct> snakeList;
 }
-[System.Serializable] public struct DialogStruct
+[System.Serializable] public class DialogStruct
 {
     public string dialogName;
     [TextArea] public string txt;
+    public CharacterObj character;
     public VoiceObj voice;
 }
 [System.Serializable] public struct VoiceStruct
