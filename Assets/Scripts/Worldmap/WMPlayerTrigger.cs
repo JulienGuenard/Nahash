@@ -19,4 +19,9 @@ public class WMPlayerTrigger : MonoBehaviour
     {
         if (c.tag == "Town") worldmapM.TownAtRange = null;
     }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        worldmapM.IsPlayerMoving = false;
+    }
 }

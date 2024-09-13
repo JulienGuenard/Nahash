@@ -55,7 +55,7 @@ MonoBehaviour:
     dialogList:
     - dialogName: Roi Bhodin
       txt: "Tu es pr\xEAt, et tu vas devoir partir en dehors do royaume pour accomplir
-        une importante mission."
+        une"
       character: {fileID: 11400000, guid: ca8d24899e9bb4d4097c36d5ab401257, type: 2}
       voice: {fileID: 11400000, guid: 724e242d38081b441a58bc2b2a2aa9be, type: 2}
     snakeList: []

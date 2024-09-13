@@ -30,11 +30,9 @@ public class LanguageManager : MonoBehaviour
     }
     #endregion
 
-    private void Update()
+    private void Start()
     {
-        if (Input.GetKeyDown(KeyCode.U)) { LangID = 0; }
-        if (Input.GetKeyDown(KeyCode.I)) { LangID = 1; }
-        if (Input.GetKeyDown(KeyCode.O)) { LangID = 2; }
+        LangID = 0;
     }
 
     public void TranslateEvent(List<string> dialogList)

@@ -19,8 +19,8 @@ public class CameraManager : MonoBehaviour
     {
         float camSize =     CameraChange_SetSize(sceneName);
         Vector3 camPos =    CameraChange_SetZoom(sceneName);
-                            CameraZoom(camSize);
-                            CameraMove(camPos);
+                       /*     CameraZoom(camSize);
+                            CameraMove(camPos);*/
     }
     public void     CameraZoom(float val)
     {

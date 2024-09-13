@@ -10,7 +10,11 @@ public class WorldmapPlayer : MonoBehaviour
     bool isMoving; public bool IsMoving
     { 
         get { return isMoving; } 
-        set {  isMoving = value; } 
+        set 
+        {
+            if (!isMoving && value) StartCoroutine(Move());
+            isMoving = value;
+        } 
     }
 
     GameObject waypoint;
@@ -19,12 +23,17 @@ public class WorldmapPlayer : MonoBehaviour
     {
         waypoint = WorldmapManager.instance.playerWaypoint;
     }
-    private void Update()
+
+    private IEnumerator Move()
     {
-        if (isMoving) Move();
-    }
-    private void Move()
-    {
-        player.transform.position = Vector3.MoveTowards(player.transform.position, waypoint.transform.position, speed);
+        Vector2 moveTowards = Vector2.MoveTowards(player.transform.position, waypoint.transform.position, speed);
+        player.GetComponent<CircleCollider2D>().offset = moveTowards - (Vector2)player.transform.position;
+        yield return new WaitForSeconds(0.02f);
+        player.GetComponent<CircleCollider2D>().offset = Vector2.zero;
+        if (isMoving)
+        {
+            player.transform.position = moveTowards;
+            StartCoroutine(Move());
+        }
     }
 }
