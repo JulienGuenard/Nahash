@@ -20,7 +20,7 @@ public class UIManager : MonoBehaviour
         set 
         { 
             timeTxt = value;
-            timeTxt.text = "Time : " + TimeManager.instance.TimeLeft.ToString();
+            timeTxt.text = "Time : " + TimerManager.instance.TimerTimeLeft.ToString();
         }
     } 
     TextMeshPro lifeTxt; public TextMeshPro LifeTxt

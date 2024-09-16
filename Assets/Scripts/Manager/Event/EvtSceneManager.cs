@@ -123,7 +123,7 @@ public class EvtSceneManager : MonoBehaviour
 
         if (snakeStructList[0].timeToWait == 0 || snakeStructList[0].timeToWait > 950)
         UIManager.instance.TimeTxt.gameObject.SetActive(false);
-        else TimeManager.instance.TimeLeft = snakeStructList[0].timeToWait;
+        else TimerManager.instance.TimerTimeLeft = snakeStructList[0].timeToWait;
 
     }
 

@@ -65,6 +65,6 @@ public class VoiceManager : MonoBehaviour
 
             MusicManager.instance.sfxAudio.PlayOneShot(sfx);
         }
-        EvtSceneManager.instance.CanPlayerGoNext = true;
+        EvtSceneManager.instance.EvtSceneEnable();
     }
 }

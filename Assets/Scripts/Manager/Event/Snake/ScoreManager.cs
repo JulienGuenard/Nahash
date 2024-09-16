@@ -41,7 +41,6 @@ public class ScoreManager : MonoBehaviour
 
         ScoreReset();
         EvtSceneManager.instance.StartEvtScene();
-        TimeManager.instance.TimeEnd();
+        TimerManager.instance.TimerEnd();
     }
-
 }

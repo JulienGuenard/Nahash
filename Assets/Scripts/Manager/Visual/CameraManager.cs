@@ -38,8 +38,8 @@ public class CameraManager : MonoBehaviour
     {
         if (sceneName == "SceneWorldmap")
         {
-            Camera.main.transform.SetParent(WorldmapManager.instance.wmPlayer.transform);
-            Camera.main.transform.position = WorldmapManager.instance.wmPlayer.transform.position + new Vector3(0, 0, -10);
+            Camera.main.transform.SetParent(WorldmapManager.instance.playerToken.transform);
+            Camera.main.transform.position = WorldmapManager.instance.playerToken.transform.position + new Vector3(0, 0, -10);
         }else 
         {
             Camera.main.transform.SetParent(transform);

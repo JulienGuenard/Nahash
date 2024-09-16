@@ -16,7 +16,7 @@ public class Snake : MonoBehaviour
     {
         Input_SnakeDirection(1, 0);
         StartCoroutine(Move());
-        TimeManager.instance.TimeStart();
+        TimerManager.instance.TimerStart();
     }
     private void Update()
     {
@@ -78,7 +78,7 @@ public class Snake : MonoBehaviour
         Destroy(food);
         Eat_BodyGrow();
         ScoreManager.instance.Score += 1;
-        FoodManager.instance.FoodNew(transform.position);
+        FoodManager.instance.FoodCreate();
     }
     private void Eat_BodyGrow()
     {

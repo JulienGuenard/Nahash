@@ -15,24 +15,27 @@ public class FoodManager : MonoBehaviour
     }
     #endregion
 
-    public void     FoodNew(Vector2 forbiddenPos)
+    public void FoodCreate()
     {
-        Vector2 randomPos =             FoodNew_RandomPos(ArenaManager.instance.gridX, ArenaManager.instance.gridY);
-        if (randomPos == forbiddenPos)  FoodNew(forbiddenPos);
-        else                            FoodNew_Create(randomPos);
-
+        FoodCreateAtPos(RandomPosOnGrid());
     }
 
-    private Vector2 FoodNew_RandomPos(Vector2 gridX, Vector2 gridY)
+    private Vector2 RandomPosOnGrid()
     {
-        int randX = Random.Range(Mathf.FloorToInt(gridX.x), Mathf.FloorToInt(gridX.y));
-        int randY = Random.Range(Mathf.FloorToInt(gridY.x), Mathf.FloorToInt(gridY.y));
+        Vector2 gridX = ArenaManager.instance.gridX;
+        Vector2 gridY = ArenaManager.instance.gridY;
+
+        int randX = Random.Range(0, Mathf.FloorToInt(gridX.x));
+        int randY = Random.Range(0, Mathf.FloorToInt(gridY.y));
+
+        Vector2 pos = new Vector2(randX, randY);
+
+        if (SnakeManager.instance.PlayerSnake.transform.position == (Vector3)pos) RandomPosOnGrid();
 
         return new Vector2(randX, randY);
     }
-    private void    FoodNew_Create(Vector2 randomPos)
+    private void    FoodCreateAtPos(Vector2 pos)
     {
-        Transform gridTransform = ArenaManager.instance.GridTransform;
-        Instantiate(foodPrefab, randomPos, Quaternion.identity, gridTransform);
+        Instantiate(foodPrefab, pos, Quaternion.identity, ArenaManager.instance.GridTransform);
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class WorldmapManager : MonoBehaviour
 {
-    TownObj townAtRange; public TownObj TownAtRange
+    private TownObj townAtRange; public TownObj TownAtRange
     {
         get { return townAtRange; }
         set
@@ -18,12 +18,10 @@ public class WorldmapManager : MonoBehaviour
 
     public List<EventObj> eventRNGList;
     public float rngEventDelay;
-    public WorldmapPlayer player;
-    public GameObject wmPlayer;
-    public GameObject playerWaypoint;
-    public GameObject enterTownBtn;
+    public WorldmapPlayer worldmapPlayer;
+    public GameObject playerToken, playerWaypoint, enterTownBtn;
 
-    bool isPlayerMoving; public bool IsPlayerMoving
+    private bool isPlayerMoving; public bool IsPlayerMoving
     {
         get { return isPlayerMoving; }
         set
@@ -36,11 +34,11 @@ public class WorldmapManager : MonoBehaviour
             if (value && !isPlayerMoving) StartCoroutine(IsPlayerMoving_RandomEvent());
 
             isPlayerMoving = value;
-            player.IsMoving = value;
+            worldmapPlayer.IsMoving = value;
         }
     }
 
-    float rngEventDelayCurrent = 0;
+    private float rngEventDelayCurrent = 0;
 
     #region References
     public static WorldmapManager instance;
@@ -65,7 +63,7 @@ public class WorldmapManager : MonoBehaviour
         IsPlayerMoving = false;
     }
 
-    public void WMClick_PlayerMove()
+    public void WorldmapClick_PlayerMove()
     {
         Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, 10);
         playerWaypoint.transform.position = pos;

@@ -23,6 +23,10 @@ public class InputManager : MonoBehaviour
         if (sceneToGo != SceneName.None)            SceneNew(sceneToGo, eventNext);
         if (sceneHeroToGo != SceneHeroName.None)    SceneHeroNew(sceneHeroToGo);
     }
+    public void NextInput()
+    {
+        if (EvtSceneManager.instance.CanPlayerGoNext) EvtSceneManager.instance.Next();
+    }
 
     private void AxisInput()
     {
@@ -34,13 +38,11 @@ public class InputManager : MonoBehaviour
 
     private void SceneNew(SceneName sceneToGo, EventObj eventNext)
     {
-        {
-            GMBSceneManager.instance.SceneNameCurrent = sceneToGo;
-            if (eventNext != null) EventManager.instance.EventCurrent = eventNext;
-        }
+        GMBSceneManager.instance.SceneNameCurrent = sceneToGo;
+        if (eventNext != null) EventManager.instance.EventCurrent = eventNext;
     }
     private void SceneHeroNew(SceneHeroName sceneHeroToGo)
     {
-         GMBSceneManager.instance.SceneHeroNameCurrent = sceneHeroToGo;
+        GMBSceneManager.instance.SceneHeroNameCurrent = sceneHeroToGo;
     }
 }

@@ -6,6 +6,6 @@ public class NextInput : MonoBehaviour
 {
     private void OnMouseDown()
     {
-        if (EvtSceneManager.instance.CanPlayerGoNext) EvtSceneManager.instance.Next();
+        InputManager.instance.NextInput();
     }
 }
