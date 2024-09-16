@@ -16,8 +16,8 @@ public class GMBSceneManager : MonoBehaviour
             if (sceneCurrent != null) last = sceneCurrent;
 
             sceneCurrent = value;
-            SceneCurrent_Change();
             sceneCurrent.SetActive(true);
+            SceneCurrent_Change();
 
             if (last != null) SceneLast = last;
 
@@ -29,8 +29,8 @@ public class GMBSceneManager : MonoBehaviour
         set
         {
             sceneLast = value;
-            sceneLast.SetActive(false);
             SceneLast_Change();
+            sceneLast.SetActive(false);
         }
     }
     SceneName sceneNameCurrent; public SceneName SceneNameCurrent

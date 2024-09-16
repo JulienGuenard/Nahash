@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour
             scoreTxt = value;
             scoreTxt.text = "Score : " + ScoreManager.instance.Score.ToString();
         }
-    } // AutoEnabler
+    } 
     TextMeshPro timeTxt; public TextMeshPro TimeTxt
     {
         get { return timeTxt; }
@@ -22,7 +22,7 @@ public class UIManager : MonoBehaviour
             timeTxt = value;
             timeTxt.text = "Time : " + TimeManager.instance.TimeLeft.ToString();
         }
-    } // AutoEnabler
+    } 
     TextMeshPro lifeTxt; public TextMeshPro LifeTxt
     {
         get { return lifeTxt; }
@@ -31,7 +31,7 @@ public class UIManager : MonoBehaviour
             lifeTxt = value;
             PlayerManager.instance.LifeCurrent += 0;
         }
-    } // AutoEnabler
+    } 
 
     TextMeshPro dialogTxt; public TextMeshPro DialogTxt
     {
@@ -41,13 +41,14 @@ public class UIManager : MonoBehaviour
             dialogTxt = value;
             dialogTxt.text = " ";
         }
-    } // AutoEnabler
+    } 
 
     [SerializeField] GameObject enterTownBtn; public GameObject EnterTownBtn
     {
         get { return enterTownBtn; }
         set { enterTownBtn = value; }
     }
+    public List<SpriteRenderer> inventorySlotList;
 
     #region References
     public static UIManager instance;

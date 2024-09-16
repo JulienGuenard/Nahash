@@ -18,9 +18,7 @@ public class CameraManager : MonoBehaviour
     public void     CameraChange(string sceneName)
     {
         float camSize =     CameraChange_SetSize(sceneName);
-        Vector3 camPos =    CameraChange_SetZoom(sceneName);
-                       /*     CameraZoom(camSize);
-                            CameraMove(camPos);*/
+        CameraChange_SetZoom(sceneName);
     }
     public void     CameraZoom(float val)
     {
@@ -36,9 +34,16 @@ public class CameraManager : MonoBehaviour
         if (sceneName == "SceneWorldmap")   return camSizeWorldmap;
         else                                return camSizeNormal;
     }
-    private Vector3 CameraChange_SetZoom(string sceneName)
+    private void CameraChange_SetZoom(string sceneName)
     {
-        if (sceneName == "SceneWorldmap")   return new Vector3(0, -2.73f, -10);
-        else                                return new Vector3(0, 0, -10);
+        if (sceneName == "SceneWorldmap")
+        {
+            Camera.main.transform.SetParent(WorldmapManager.instance.wmPlayer.transform);
+            Camera.main.transform.position = WorldmapManager.instance.wmPlayer.transform.position + new Vector3(0, 0, -10);
+        }else 
+        {
+            Camera.main.transform.SetParent(transform);
+            Camera.main.transform.position = new Vector3(0, 0, -10);
+        }
     }
 }

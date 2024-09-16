@@ -19,6 +19,7 @@ public class WorldmapManager : MonoBehaviour
     public List<EventObj> eventRNGList;
     public float rngEventDelay;
     public WorldmapPlayer player;
+    public GameObject wmPlayer;
     public GameObject playerWaypoint;
     public GameObject enterTownBtn;
 

@@ -6,8 +6,15 @@ using UnityEngine;
     public string evtSceneName;
     public GameObject gmb;
     public List<Sprite> spriteChangeList;
+    public List<FadeStruct> fadeList;
     public List<DialogStruct> dialogList;
     public List<SnakeStruct> snakeList;
+}
+[System.Serializable]
+public class FadeStruct
+{
+    public FadeType fadeType;
+    public float time;
 }
 [System.Serializable] public class DialogStruct
 {

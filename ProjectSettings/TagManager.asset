@@ -9,6 +9,7 @@ TagManager:
   - Body
   - Town
   - Waypoint
+  - WorldmapSquare
   layers:
   - Default
   - TransparentFX
