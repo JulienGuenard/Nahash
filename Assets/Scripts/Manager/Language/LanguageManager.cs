@@ -9,6 +9,11 @@ public class LanguageManager : MonoBehaviour
 {
     public List<EventObj> eventObjList;
     public List<ButtonObj> buttonObjList;
+    public List<TooltipObj> tooltipObjList;
+    public List<QuestObj> questObjList;
+    public List<ItemObj> itemObjList;
+    public List<TownObj> townObjList;
+    public List<CharacterObj> characterObjList;
     public int langNumber;
 
     private int langID; public int LangID
