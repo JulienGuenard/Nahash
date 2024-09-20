@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MainStory-1
   m_EditorClassIdentifier: 
   questName: MainStory-1
-  description: "Tu dois aller dans cette ville, jeune padawan \nRam\xE8ne un art\xE9fact
+  description: "Tu dois aller dans cette ville, jeune padawan.\nRam\xE8ne un art\xE9fact
     sans sucre, merci."
   townNext: {fileID: 11400000, guid: e2cffe16a1f681d4781b32a422a44975, type: 2}
   itemNeededList:

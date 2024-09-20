@@ -22,7 +22,7 @@ public class SnakeManager : MonoBehaviour
 
     public void Input_SnakeDirection(float inputX, float inputY)
     {
-        if (playerSnake != null) return;
+        if (playerSnake == null) return;
 
         PlayerSnake.Input_SnakeDirection(inputX, inputY);
     }
