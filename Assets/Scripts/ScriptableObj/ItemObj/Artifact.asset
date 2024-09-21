@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Artifact
   m_EditorClassIdentifier: 
   itemName: Artifact
+  description: "Un art\xE9fact capable de d\xE9truire le monde."
   sprite: {fileID: 484777885, guid: 82c35ef2711cb574f824b60d99c565fb, type: 3}

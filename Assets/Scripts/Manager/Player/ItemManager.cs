@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class ItemManager : MonoBehaviour
 {
+    public ItemObj itemEmpty;
     [SerializeField] private List<ItemObj> itemList; public List<ItemObj> ItemListGet
     { get { return itemList; } }
     public void ItemListAdd(ItemObj item)
     { 
-            itemList.Add(item);
+        for(int i = 0; i < itemList.Count; i++) 
+        {
+            if (itemList[i] != itemEmpty) continue;
+            itemList[i] = item;
             ItemUpdate();
+            break;
+        }
     }
 
     #region References
@@ -31,7 +37,7 @@ public class ItemManager : MonoBehaviour
         for(int i  = 0; i < itemList.Count; i++) 
         {
             if (itemList[i] == null) continue;
-            UIManager.instance.inventorySlotList[i].sprite = itemList[i].sprite;
+            UIManager.instance.inventorySlotList[i].ItemObj = itemList[i];
         }
     }
 }

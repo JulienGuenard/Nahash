@@ -56,18 +56,24 @@ public class EvtSceneManager : MonoBehaviour
     {
         idCurrent++;
 
-        List<FadeStruct> fadeStructList = eventCurrent.evtSceneList[idCurrent].fadeList;
-        if (fadeStructList.Count > 0) 
-        { StartCoroutine(Next_IsFade(fadeStructList[0].fadeType, fadeStructList[0].time)); return; }
+        if (idCurrent < eventCurrent.evtSceneList.Count)
+        {
+            List<FadeStruct> fadeStructList = eventCurrent.evtSceneList[idCurrent].fadeList;
+            if (fadeStructList.Count > 0) { FadeManager.instance.Next_IsFade(fadeStructList[0].time); return; }
+            else                            Next_New();
+        }
+        else { Next_End(); return; }
 
-        if (idCurrent < eventCurrent.evtSceneList.Count)    Next_New();
-        else                                            {   Next_End(); return; }
+        List<ItemObj> itemObjList = eventCurrent.evtSceneList[idCurrent].itemList;
+        if (itemObjList.Count > 0) { Next_IsNewItem(itemObjList); }
 
         List<DialogStruct> dialogStructList = eventCurrent.evtSceneList[idCurrent].dialogList;
         if (dialogStructList.Count > 0) { Next_IsDialog(dialogStructList); return; }
 
         List<SnakeStruct> snakeStructList = eventCurrent.evtSceneList[idCurrent].snakeList;
         if (snakeStructList.Count > 0) { Next_IsSnake(snakeStructList); return; }
+
+
     }
     private void Next_New()
     {
@@ -83,19 +89,7 @@ public class EvtSceneManager : MonoBehaviour
         if (eventNext == null) GMBSceneManager.instance.SceneNameCurrent = eventCurrent.sceneNext;
         else EventCurrent = eventNext;
     }
-    private IEnumerator Next_IsFade(FadeType fadeType, float time)
-    {
-        CanPlayerGoNext = false;
-        FadeManager.instance.fade.SetBool("FadeIn", true);
-        yield return new WaitForSeconds(1f);
-        Next();
-        FadeManager.instance.fade.SetBool("FadeIn", false);
-        yield return new WaitForSeconds(time);
-        FadeManager.instance.fade.SetBool("FadeOut", true);
-        yield return new WaitForSeconds(1f);
-        FadeManager.instance.fade.SetBool("FadeOut", false);
-        CanPlayerGoNext = true;
-    }
+
     private void Next_IsDialog(List<DialogStruct> dialogStructList)
     {
         CanPlayerGoNext = false;
@@ -125,6 +119,13 @@ public class EvtSceneManager : MonoBehaviour
         UIManager.instance.TimeTxt.gameObject.SetActive(false);
         else TimerManager.instance.TimerTimeLeft = snakeStructList[0].timeToWait;
 
+    }
+    private void Next_IsNewItem(List<ItemObj> itemStructList)
+    {
+        foreach(ItemObj itemObj in itemStructList) 
+        {
+            ItemManager.instance.ItemListAdd(itemObj);
+        }
     }
 
     IEnumerator CanPlayerGoNext_Delay(bool value)

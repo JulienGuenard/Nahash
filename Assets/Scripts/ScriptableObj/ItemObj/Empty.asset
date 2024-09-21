@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 845ff875f3ab2e04babe8355906dadf5, type: 3}
   m_Name: Empty
   m_EditorClassIdentifier: 
-  itemName: Empty
+  itemName: Vide
+  description: Il n'y a rien.
   sprite: {fileID: 0}

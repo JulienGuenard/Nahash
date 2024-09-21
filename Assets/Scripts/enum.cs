@@ -14,4 +14,4 @@ public enum SceneHeroName
     Inventory,
     Skilltree
 }
-public enum FadeType { normalIn, normalOut }
+public enum FadeType { None, Normal }

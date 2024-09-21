@@ -116,6 +116,7 @@ public class GMBSceneManager : MonoBehaviour
     private void SceneCurrent_Change()
     {
         CameraManager.instance.CameraChange(sceneCurrent.name);
+        TooltipManager.instance.HideTooltips();
 
         if (sceneCurrent.name == "SceneWorldmap")   WorldmapManager.instance.WorldmapEnable();
         if (sceneCurrent.name == "SceneEvent")      EvtSceneManager.instance.EvtSceneEnable();

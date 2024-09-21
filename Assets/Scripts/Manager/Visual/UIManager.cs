@@ -48,7 +48,7 @@ public class UIManager : MonoBehaviour
         get { return enterTownBtn; }
         set { enterTownBtn = value; }
     }
-    public List<SpriteRenderer> inventorySlotList;
+    public List<ItemData> inventorySlotList;
 
     #region References
     public static UIManager instance;

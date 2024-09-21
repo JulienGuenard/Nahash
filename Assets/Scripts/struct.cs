@@ -9,6 +9,7 @@ using UnityEngine;
     public List<FadeStruct> fadeList;
     public List<DialogStruct> dialogList;
     public List<SnakeStruct> snakeList;
+    public List<ItemObj> itemList;
 }
 [System.Serializable]
 public class FadeStruct

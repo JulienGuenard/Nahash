@@ -9,6 +9,7 @@ public class ButtonInput : MonoBehaviour
     public SceneName sceneToGo;
     public SceneHeroName sceneHeroToGo;
     public EventObj eventNext;
+    public FadeType fadeType;
 
     private TextMeshPro txtMesh;
 
@@ -27,6 +28,6 @@ public class ButtonInput : MonoBehaviour
 
     private void OnMouseDown()
     {
-        InputManager.instance.ButtonInput(sceneToGo, sceneHeroToGo, eventNext);
+        InputManager.instance.ButtonInput(sceneToGo, sceneHeroToGo, eventNext, fadeType);
     }
 }

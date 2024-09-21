@@ -5,10 +5,17 @@ using UnityEngine;
 public class TooltipData : MonoBehaviour
 {
     public TooltipObj tooltipObj;
+    private ItemData itemData;
+
+    private void OnEnable()
+    {
+        itemData = GetComponent<ItemData>();
+    }
 
     public void OnMouseEnter()
     {
-        TooltipManager.instance.Btn_ShowTooltip(tooltipObj.title, tooltipObj.text);
+        if (itemData != null) TooltipManager.instance.Btn_ShowTooltip(itemData.ItemObj.itemName, itemData.ItemObj.description);
+        if (tooltipObj != null) TooltipManager.instance.Btn_ShowTooltip(tooltipObj.title, tooltipObj.text);
     }
 
     public void OnMouseExit()
