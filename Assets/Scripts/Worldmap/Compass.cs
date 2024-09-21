@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Compass : MonoBehaviour
 {
-    public GameObject a;
-    public GameObject b;    
+    public GameObject townNext;    
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +15,7 @@ public class Compass : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ObjectRotateTowards(a, b);
+        ObjectRotateTowards(gameObject, townNext);
     }
 
     void ObjectRotateTowards(GameObject a, GameObject b)

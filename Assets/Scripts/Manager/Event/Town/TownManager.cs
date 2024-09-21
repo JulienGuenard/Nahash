@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TownManager : MonoBehaviour
 {
+    public List<TownData> townList;
+
     TownObj townCurrent; public TownObj TownCurrent
     {
         get { return townCurrent; }
@@ -31,6 +34,15 @@ public class TownManager : MonoBehaviour
     public void TownDisable()
     {
         TownCurrent = null;
+    }
+
+    public GameObject TownFind(TownObj townObj)
+    {
+        foreach(TownData data in townList)
+        {
+            if (townObj == data.townObj) return data.gameObject;
+        }
+        return null;
     }
 
     private void TownCurrent_New()

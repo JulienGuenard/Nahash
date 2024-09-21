@@ -31,7 +31,24 @@ public class UIManager : MonoBehaviour
             lifeTxt = value;
             PlayerManager.instance.LifeCurrent += 0;
         }
-    } 
+    }
+    TextMeshPro questTxtTitle; public TextMeshPro QuestTxtTitle
+    {
+        get { return questTxtTitle; }
+        set
+        {
+            questTxtTitle = value;
+        }
+    }
+    TextMeshPro questTxtDescription; public TextMeshPro QuestTxtDescription
+    {
+        get { return questTxtDescription; }
+        set
+        {
+            questTxtDescription = value;
+        }
+    }
+
 
     TextMeshPro dialogTxt; public TextMeshPro DialogTxt
     {

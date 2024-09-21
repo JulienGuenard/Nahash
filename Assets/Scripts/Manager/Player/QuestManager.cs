@@ -4,6 +4,18 @@ using UnityEngine;
 
 public class QuestManager : MonoBehaviour
 {
+    public Compass compass;
+
+    private QuestObj questCurrent;  public QuestObj QuestCurrent
+    { 
+        get { return questCurrent; } 
+        set 
+        { 
+            questCurrent = value;
+            compass.townNext = TownManager.instance.TownFind(value.townNext);
+        }
+    }
+
     #region References
     public static QuestManager instance;
 
