@@ -38,6 +38,7 @@ public class UIManager : MonoBehaviour
         set
         {
             questTxtTitle = value;
+            questTxtTitle.text = QuestManager.instance.QuestCurrent.questName;
         }
     }
     TextMeshPro questTxtDescription; public TextMeshPro QuestTxtDescription
@@ -46,6 +47,7 @@ public class UIManager : MonoBehaviour
         set
         {
             questTxtDescription = value;
+            questTxtDescription.text = QuestManager.instance.QuestCurrent.description;
         }
     }
 

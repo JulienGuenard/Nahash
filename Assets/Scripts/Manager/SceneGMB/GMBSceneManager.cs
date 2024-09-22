@@ -121,12 +121,14 @@ public class GMBSceneManager : MonoBehaviour
         if (sceneCurrent.name == "SceneWorldmap")   WorldmapManager.instance.WorldmapEnable();
         if (sceneCurrent.name == "SceneEvent")      EvtSceneManager.instance.EvtSceneEnable();
         if (sceneCurrent.name == "SceneTown")       TownManager.instance.TownEnable();
+        if (sceneCurrent.name == "SceneHero")       HeroManager.instance.HeroEnable();
     }
     private void SceneLast_Change()
     {
         if (sceneLast.name == "SceneWorldmap")  WorldmapManager.instance.WorldmapDisable();
         if (sceneLast.name == "SceneEvent")     EvtSceneManager.instance.EvtSceneDisable();
         if (sceneLast.name == "SceneTown")      TownManager.instance.TownDisable();
+        if (sceneCurrent.name == "SceneHero")   HeroManager.instance.HeroDisable();
     }
 
     private void Start_SceneHeroStart()

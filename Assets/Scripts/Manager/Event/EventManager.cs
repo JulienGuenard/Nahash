@@ -11,6 +11,7 @@ public class EventManager : MonoBehaviour
         { 
             eventCurrent = value;
             EvtSceneManager.instance.EventCurrent = value;
+            QuestManager.instance.QuestCheckEvent();
         }
     }
 

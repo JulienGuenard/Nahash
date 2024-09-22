@@ -39,5 +39,6 @@ public class ItemManager : MonoBehaviour
             if (itemList[i] == null) continue;
             UIManager.instance.inventorySlotList[i].ItemObj = itemList[i];
         }
+        QuestManager.instance.QuestCheckItem();
     }
 }

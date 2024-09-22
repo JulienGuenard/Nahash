@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0706371ba54d34f86cb2d52e49185c, type: 3}
   m_Name: MainStory-2
   m_EditorClassIdentifier: 
-  questName: MainStory-1
+  questName: MainStory-2
   description: Je sais pas ce qu'on fait
   townNext: {fileID: 11400000, guid: c60bfb192b29b8a478a2882dbbccdfb0, type: 2}
   itemNeededList:

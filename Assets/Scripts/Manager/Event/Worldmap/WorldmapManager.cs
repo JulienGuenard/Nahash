@@ -6,6 +6,13 @@ using TMPro;
 
 public class WorldmapManager : MonoBehaviour
 {
+    public TextMeshPro questTxtTitle;
+    public TextMeshPro questTxtDescription;
+    public List<EventObj> eventRNGList;
+    public float rngEventDelay;
+    public WorldmapPlayer worldmapPlayer;
+    public GameObject playerToken, playerWaypoint, enterTownBtn;
+
     private TownObj townAtRange; public TownObj TownAtRange
     {
         get { return townAtRange; }
@@ -16,11 +23,6 @@ public class WorldmapManager : MonoBehaviour
             else                        UIManager.instance.EnterTownBtn.SetActive(false);
         }
     }
-
-    public List<EventObj> eventRNGList;
-    public float rngEventDelay;
-    public WorldmapPlayer worldmapPlayer;
-    public GameObject playerToken, playerWaypoint, enterTownBtn;
 
     private bool isPlayerMoving; public bool IsPlayerMoving
     {
@@ -57,7 +59,8 @@ public class WorldmapManager : MonoBehaviour
 
     public void WorldmapEnable()
     {
-        UIManager.instance.QuestTxtTitle = GameObject.Find("SnakeView/Life").GetComponent<TextMeshPro>();
+        UIManager.instance.QuestTxtTitle = questTxtTitle;
+        UIManager.instance.QuestTxtDescription = questTxtDescription;
     }
     public void WorldmapDisable()
     {
