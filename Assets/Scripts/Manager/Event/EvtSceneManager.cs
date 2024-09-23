@@ -59,7 +59,7 @@ public class EvtSceneManager : MonoBehaviour
         if (idCurrent < eventCurrent.evtSceneList.Count)
         {
             List<FadeStruct> fadeStructList = eventCurrent.evtSceneList[idCurrent].fadeList;
-            if (fadeStructList.Count > 0) { FadeManager.instance.Next_IsFade(fadeStructList[0].time); return; }
+            if (fadeStructList.Count > 0) { FadeManager.instance.NextBtn_FadeEvent(fadeStructList[0].time); return; }
             else                            Next_New();
         }
         else { Next_End(); return; }

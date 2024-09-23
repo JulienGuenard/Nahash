@@ -38,7 +38,7 @@ public class InputManager : MonoBehaviour
     {
         if (!playerCanInteract) return;
 
-        if (fadeType == FadeType.Normal) FadeManager.instance.FadeNormal(sceneToGo, sceneHeroToGo, eventNext);
+        if (fadeType == FadeType.Normal) FadeManager.instance.Btn_FadeScene(sceneToGo, sceneHeroToGo, eventNext);
         else
         {
             if (sceneToGo != SceneName.None) SceneNew(sceneToGo, eventNext);
