@@ -1,7 +1,7 @@
 ﻿Events;French;English;Spanish
-Intro;Bonjour;Hello;Hola
-Intro;Comment ça va ?;How are you ?;Como buene ?
-Intro;Belle journée n'est-ce pas ?;Good day isn't it ?;Bueno journo tambien ?
+Intro;L'histoire se déroule sur le continent de Pangée.;Hello;Hola
+Intro;Un conflit s'organise entre deux royaumes.;How are you ?;Como buene ?
+Intro;"Tout le monde souhaite la paix, mais à quel prix ?";Good day isn't it ?;Bueno journo tambien ?
 MainEvent-1;"Elvin, mon garçon, approche, je dois te parler.";"Elvin, grow up man !";"Elvin, no sabemos qué pasar..."
 MainEvent-1;Oui père ?;Nooo way !;Quéééé ???
 MainEvent-1;"Je vais te confier la magie de notre peuple, la transformation en serpent.";"I'll push you into a magic hell, bitch";Té fisto del so papa
@@ -9,10 +9,39 @@ MainEvent-1;Déjà ? Ne faut-il pas suivre un entrainement approprié ?;Suck up;
 MainEvent-1;"Tu es prêt, et tu vas devoir partir en dehors do royaume pour accomplir une";"You go to military school, boy";Ta mama y ta papa prefero qué tu parta de la casa.
 MainEvent-1;Laquelle père ?;Fuck;Fucko
 MainEvent-1;"Trouver un artéfact capable de nous garantir la paix, fils.";You'll find new bitches;Te trouva una bambina en la savana.
-MainEvent-2;"Elvin, mon garçon, approche, je dois te parler.";"Elvin, grow up man !";"Elvin, no sabemos qué pasar..."
-MainEvent-2;Oui père ?;Nooo way !;Quéééé ???
-MainEvent-2;"Je vais te confier la magie de notre peuple, la transformation en serpent.";"I'll push you into a magic hell, bitch";Té fisto del so papa
-MainEvent-2;Déjà ? Ne faut-il pas suivre un entrainement approprié ?;Suck up;"Qué cé dice, conardo ?"
-MainEvent-2;"Tu es prêt, et tu vas devoir partir en dehors do royaume pour accomplir une";"You go to military school, boy";Ta mama y ta papa prefero qué tu parta de la casa.
-MainEvent-2;Laquelle père ?;Fuck;Fucko
-MainEvent-2;"Trouver un artéfact capable de nous garantir la paix, fils.";You'll find new bitches;Te trouva una bambina en la savana.
+MainEvent-2;"Tenez père, voici l'artéfact que vous m'avez fait chercher.";"Elvin, grow up man !";"Elvin, no sabemos qué pasar..."
+MainEvent-2;"Très bien, il ne faut pas tarder, utilisons le.";Nooo way !;Quéééé ???
+MainEvent-2;Mais à quoi sert-il ?;"I'll push you into a magic hell, bitch";Té fisto del so papa
+MainEvent-2;Regarde par là.;Suck up;"Qué cé dice, conardo ?"
+Cinématique 2;Un rayon depuis le ciel s'abbatit alors sur le continent.;"You go to military school, boy";Ta mama y ta papa prefero qué tu parta de la casa.
+Cinématique 2;Séparant brusquement la terre en deux.;Fuck;Fucko
+Cinématique 2;Evinçant de nombreuses vies d'un seul coup.;You'll find new bitches;Te trouva una bambina en la savana.
+MainEvent-3;Qu'avez-vous fait !?;;
+MainEvent-3;Qui es-tu ?;;
+MainEvent-3;"De nombreuses vies habitaient là-bàs, vous les avez tous tués !!";;
+MainEvent-3;"Silence ! Je suis le roi, Elvin, veux-tu bien le faire s...";;
+MainEvent-3;Je... suis désolé je ne savais pas qu'il ferait ça...;;
+MainEvent-4;"Adamant, écoute moi ! Je n'en savais rien, tu ne dois pas utiliser l'artéfact en représaille";;
+MainEvent-4;Je l'ai détruit.;;
+MainEvent-4;C... Comment !?;;
+MainEvent-4;"Enfin pas complètement, en réalité l'arme se trouve dans le ciel, je vais le détruire complètement, m'accompagneras-tu ?";;
+MainEvent-4;"Je ne comprend pas, je veux juste en finir avec cet artéfact, je te suis.";;
+Cinématique 5;Les princes héros réussirent à s'échapper.;;
+Cinématique 5;Le satelite explosa alors en orbite haute.;;
+Cinématique 5;Plus aucune menace ne pèsera depuis le ciel.;;
+MainEvent-5;"C'est fait, il est désormais hors d'état de nuire";;
+MainEvent-5;Qu'allons-nous faire maintenant ?;;
+MainEvent-5;Tu devrais rentrer dans ton royaume.;;
+MainEvent-5;Non je dois expliquer à ton père ce qu'il s'est passé avec toi.;;
+MainEvent-5;"Bon très bien, allons-y.";;
+MainEvent-6;"Père, où est Evelyn ?";;
+MainEvent-6;"En cellule, nous sommes en guerre !";;
+MainEvent-6;Comment !? Ma soeur est en prison ici ?;;
+MainEvent-6;"!? Gardes, mettez-le aussi en cellule !";;
+MainEvent-6;Mais que se passe-t-il ?;;
+MainEvent-6;"Nos forces ont pris le royaume de Bellum, nous avons envoyé toute la flotte.";;
+MainEvent-6;"Oh non, je dois délivrer ma soeur et retourner auprès de mon peuple pour les protéger.";;
+MainEvent-7;"C'est bon, nous avons enfin mis un terme au saccage.";;
+MainEvent-7;"Mon père ne verra pas mon retour d'un bon oeil, je vais rester ici avec Evelyn.";;
+MainEvent-7;Cela prendra du temps de tout rebâtir dans la paix.;;
+MainEvent-7;Nous y parviendrons ensemble.;;
