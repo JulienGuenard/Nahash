@@ -6,6 +6,7 @@ public class QuestObj : ScriptableObject
 {
     public string questName;
     [TextArea] public string description;
+    [TextArea] public string descriptionSub;
     public TownObj townNext;
     public List<ItemObj> itemNeededList;
     public List<EventObj> eventNeededList;

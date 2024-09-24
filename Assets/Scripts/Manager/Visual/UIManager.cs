@@ -47,7 +47,7 @@ public class UIManager : MonoBehaviour
         set
         {
             questTxtDescription = value;
-            questTxtDescription.text = QuestManager.instance.QuestCurrent.description;
+            questTxtDescription.text = QuestManager.instance.QuestCurrent.description + "<br><br>" + QuestManager.instance.QuestCurrent.descriptionSub;
         }
     }
 

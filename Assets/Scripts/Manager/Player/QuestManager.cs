@@ -15,7 +15,7 @@ public class QuestManager : MonoBehaviour
             questCurrent = value;
             compass.townNext = TownManager.instance.TownFind(value.townNext);
             if (UIManager.instance.QuestTxtTitle != null) UIManager.instance.QuestTxtTitle.text = questCurrent.questName;
-            if (UIManager.instance.QuestTxtDescription != null) UIManager.instance.QuestTxtDescription.text = questCurrent.description;
+            if (UIManager.instance.QuestTxtDescription != null) UIManager.instance.QuestTxtDescription.text = questCurrent.description + "<br><br>" + questCurrent.descriptionSub;
         }
     }
 

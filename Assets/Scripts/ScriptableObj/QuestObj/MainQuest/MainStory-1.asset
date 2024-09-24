@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0706371ba54d34f86cb2d52e49185c, type: 3}
   m_Name: MainStory-1
   m_EditorClassIdentifier: 
-  questName: MainStory-1
+  questName: "Art\xE9fact"
   description: "Trouve l'art\xE9fact."
+  descriptionSub: 
   townNext: {fileID: 11400000, guid: e2cffe16a1f681d4781b32a422a44975, type: 2}
   itemNeededList:
   - {fileID: 11400000, guid: 0b6bccfb9995ab246acac5a2276b184b, type: 2}
