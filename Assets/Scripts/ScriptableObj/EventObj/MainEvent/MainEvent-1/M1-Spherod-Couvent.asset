@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f305b545501e3e04194503ad8859468c, type: 3}
-  m_Name: "M1-Nemerod-ChampsBl\xE9"
+  m_Name: M1-Spherod-Couvent
   m_EditorClassIdentifier: 
   evtSceneList:
   - evtSceneName: Dialog
@@ -18,21 +18,10 @@ MonoBehaviour:
     spriteChangeList: []
     fadeList: []
     dialogList:
-    - dialogName: Elvin
+    - dialogName: Moine
       txt: 
-      character: {fileID: 11400000, guid: 9723f8a17e5e24c468d86a185f398ba9, type: 2}
-      voice: {fileID: 11400000, guid: 8b8b9c6e85938aa48b4f74a139b187db, type: 2}
-    snakeList: []
-    itemList: []
-  - evtSceneName: Dialog
-    gmb: {fileID: 6138185418471125062, guid: c1d43be24256c5d43983a8a99e68fe49, type: 3}
-    spriteChangeList: []
-    fadeList: []
-    dialogList:
-    - dialogName: Epouvantail
-      txt: 
-      character: {fileID: 11400000, guid: 08858c095f5b6474792aa6b4f67fda3b, type: 2}
-      voice: {fileID: 11400000, guid: de45d9616d2174144b009eaaf79dab2e, type: 2}
+      character: {fileID: 11400000, guid: 4484b0464dc48d64ab6177a180f616f0, type: 2}
+      voice: {fileID: 11400000, guid: 40145d5219fe2ea4e9d2f58ef76b4fd5, type: 2}
     snakeList: []
     itemList: []
   - evtSceneName: Dialog
@@ -51,21 +40,10 @@ MonoBehaviour:
     spriteChangeList: []
     fadeList: []
     dialogList:
-    - dialogName: Epouvantail
+    - dialogName: Moine
       txt: 
-      character: {fileID: 11400000, guid: 08858c095f5b6474792aa6b4f67fda3b, type: 2}
-      voice: {fileID: 11400000, guid: de45d9616d2174144b009eaaf79dab2e, type: 2}
-    snakeList: []
-    itemList: []
-  - evtSceneName: Dialog
-    gmb: {fileID: 6138185418471125062, guid: c1d43be24256c5d43983a8a99e68fe49, type: 3}
-    spriteChangeList: []
-    fadeList: []
-    dialogList:
-    - dialogName: Elvin
-      txt: 
-      character: {fileID: 11400000, guid: 9723f8a17e5e24c468d86a185f398ba9, type: 2}
-      voice: {fileID: 11400000, guid: 8b8b9c6e85938aa48b4f74a139b187db, type: 2}
+      character: {fileID: 11400000, guid: 4484b0464dc48d64ab6177a180f616f0, type: 2}
+      voice: {fileID: 11400000, guid: 40145d5219fe2ea4e9d2f58ef76b4fd5, type: 2}
     snakeList: []
     itemList: []
   eventNext: {fileID: 0}

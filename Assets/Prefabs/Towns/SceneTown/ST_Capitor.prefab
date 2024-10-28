@@ -100,7 +100,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Caserne
+  m_text: Tribunal
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -819,7 +819,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Tr\xF4ne"
+  m_text: Centre commercial
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1163,7 +1163,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Archerie
+  m_text: "March\xE9"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1365,7 +1365,7 @@ MonoBehaviour:
   buttonObj: {fileID: 0}
   sceneToGo: 2
   sceneHeroToGo: 0
-  eventNext: {fileID: 11400000, guid: 1b0fc2cb10367ff42946d21988f12393, type: 2}
+  eventNext: {fileID: 11400000, guid: e15c0a2730999224dbe821eb24722e9b, type: 2}
   fadeType: 0
 --- !u!61 &6062800371642193364
 BoxCollider2D:
@@ -1542,7 +1542,7 @@ MonoBehaviour:
   buttonObj: {fileID: 0}
   sceneToGo: 2
   sceneHeroToGo: 0
-  eventNext: {fileID: 11400000, guid: b34ec7bdd0263c144840d01f8b451eaf, type: 2}
+  eventNext: {fileID: 11400000, guid: eb73041d7b483da4791e182ba40d7bcb, type: 2}
   fadeType: 0
 --- !u!61 &3410950348861885653
 BoxCollider2D:
@@ -1933,7 +1933,7 @@ MonoBehaviour:
   buttonObj: {fileID: 0}
   sceneToGo: 2
   sceneHeroToGo: 0
-  eventNext: {fileID: 11400000, guid: eb73041d7b483da4791e182ba40d7bcb, type: 2}
+  eventNext: {fileID: 11400000, guid: 1b0fc2cb10367ff42946d21988f12393, type: 2}
   fadeType: 0
 --- !u!61 &5656088631444107767
 BoxCollider2D:
@@ -2434,7 +2434,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lice
+  m_text: Pavillons
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

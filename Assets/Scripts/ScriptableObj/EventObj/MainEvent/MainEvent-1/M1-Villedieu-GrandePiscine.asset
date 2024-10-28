@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f305b545501e3e04194503ad8859468c, type: 3}
-  m_Name: M1-Spherod-Habitations 2
+  m_Name: M1-Villedieu-GrandePiscine
   m_EditorClassIdentifier: 
   evtSceneList:
   - evtSceneName: Dialog
@@ -18,10 +18,10 @@ MonoBehaviour:
     spriteChangeList: []
     fadeList: []
     dialogList:
-    - dialogName: Adamant
-      txt: Elvin ! Quelle bonne surprise, que fais-tu par ici ?
-      character: {fileID: 11400000, guid: 152c3b2255d941541b304a2f0d03de39, type: 2}
-      voice: {fileID: 11400000, guid: 69a33db8e31931145a1b22411e50c93a, type: 2}
+    - dialogName: Vieillard
+      txt: 
+      character: {fileID: 11400000, guid: 637c2e0fac4f0984e949e48481344961, type: 2}
+      voice: {fileID: 11400000, guid: 76068e6953b0b2241b51795cb91b4be9, type: 2}
     snakeList: []
     itemList: []
   eventNext: {fileID: 0}

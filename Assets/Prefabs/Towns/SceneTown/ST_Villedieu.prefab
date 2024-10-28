@@ -165,7 +165,7 @@ MonoBehaviour:
   buttonObj: {fileID: 0}
   sceneToGo: 2
   sceneHeroToGo: 0
-  eventNext: {fileID: 11400000, guid: dc71cfeec513f194bbc409f9918b4aa1, type: 2}
+  eventNext: {fileID: 11400000, guid: 28b607b1615e31b49a573a318188c3a5, type: 2}
   fadeType: 0
 --- !u!61 &5509580834653446230
 BoxCollider2D:
@@ -342,7 +342,7 @@ MonoBehaviour:
   buttonObj: {fileID: 0}
   sceneToGo: 2
   sceneHeroToGo: 0
-  eventNext: {fileID: 11400000, guid: dc71cfeec513f194bbc409f9918b4aa1, type: 2}
+  eventNext: {fileID: 11400000, guid: c2a30ae6ecad3c248968a58f4b73dd6c, type: 2}
   fadeType: 0
 --- !u!61 &8427159851798706906
 BoxCollider2D:
@@ -489,7 +489,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Tr\xF4ne"
+  m_text: Ecole d'alchimie
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1031,7 +1031,7 @@ MonoBehaviour:
   buttonObj: {fileID: 0}
   sceneToGo: 2
   sceneHeroToGo: 0
-  eventNext: {fileID: 11400000, guid: dc71cfeec513f194bbc409f9918b4aa1, type: 2}
+  eventNext: {fileID: 11400000, guid: e9e032fa9c91d304e96e7d182876d2ed, type: 2}
   fadeType: 0
 --- !u!61 &8673960128976971086
 BoxCollider2D:
@@ -1178,7 +1178,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Caserne
+  m_text: "Pierre Rouge\xE2tre"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1350,7 +1350,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lice
+  m_text: "Arbre g\xE9ant"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1699,7 +1699,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Archerie
+  m_text: Piscine
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2459,7 +2459,7 @@ MonoBehaviour:
   buttonObj: {fileID: 0}
   sceneToGo: 2
   sceneHeroToGo: 0
-  eventNext: {fileID: 11400000, guid: dc71cfeec513f194bbc409f9918b4aa1, type: 2}
+  eventNext: {fileID: 11400000, guid: cfcd69145fe550748b39a2b39a7116d9, type: 2}
   fadeType: 0
 --- !u!61 &6148748219372189110
 BoxCollider2D:

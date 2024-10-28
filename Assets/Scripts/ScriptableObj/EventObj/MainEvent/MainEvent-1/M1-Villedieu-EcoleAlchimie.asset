@@ -10,20 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f305b545501e3e04194503ad8859468c, type: 3}
-  m_Name: M1-Nemerod-Porcherie
+  m_Name: M1-Villedieu-EcoleAlchimie
   m_EditorClassIdentifier: 
   evtSceneList:
-  - evtSceneName: Dialog
-    gmb: {fileID: 6138185418471125062, guid: c1d43be24256c5d43983a8a99e68fe49, type: 3}
-    spriteChangeList: []
-    fadeList: []
-    dialogList:
-    - dialogName: Eleveur
-      txt: 
-      character: {fileID: 11400000, guid: 9ddc4c8325c2c764a888ed83143b2a17, type: 2}
-      voice: {fileID: 11400000, guid: c9f43520431d0a943849ac0745bdf0dd, type: 2}
-    snakeList: []
-    itemList: []
   - evtSceneName: Dialog
     gmb: {fileID: 6138185418471125062, guid: c1d43be24256c5d43983a8a99e68fe49, type: 3}
     spriteChangeList: []
@@ -40,10 +29,10 @@ MonoBehaviour:
     spriteChangeList: []
     fadeList: []
     dialogList:
-    - dialogName: Eleveur
+    - dialogName: Alchimiste
       txt: 
-      character: {fileID: 11400000, guid: 9ddc4c8325c2c764a888ed83143b2a17, type: 2}
-      voice: {fileID: 11400000, guid: c9f43520431d0a943849ac0745bdf0dd, type: 2}
+      character: {fileID: 11400000, guid: 299b163e3c232544eba7d5b635d7cd2d, type: 2}
+      voice: {fileID: 11400000, guid: aa0fdee2447c0424fb132b346da0ab31, type: 2}
     snakeList: []
     itemList: []
   eventNext: {fileID: 0}

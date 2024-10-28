@@ -18,10 +18,32 @@ MonoBehaviour:
     spriteChangeList: []
     fadeList: []
     dialogList:
-    - dialogName: Adamant
-      txt: Elvin ! Quelle bonne surprise, que fais-tu par ici ?
-      character: {fileID: 11400000, guid: 152c3b2255d941541b304a2f0d03de39, type: 2}
-      voice: {fileID: 11400000, guid: 69a33db8e31931145a1b22411e50c93a, type: 2}
+    - dialogName: Vieillard
+      txt: 
+      character: {fileID: 11400000, guid: 637c2e0fac4f0984e949e48481344961, type: 2}
+      voice: {fileID: 11400000, guid: 76068e6953b0b2241b51795cb91b4be9, type: 2}
+    snakeList: []
+    itemList: []
+  - evtSceneName: Dialog
+    gmb: {fileID: 6138185418471125062, guid: c1d43be24256c5d43983a8a99e68fe49, type: 3}
+    spriteChangeList: []
+    fadeList: []
+    dialogList:
+    - dialogName: Elvin
+      txt: 
+      character: {fileID: 11400000, guid: 9723f8a17e5e24c468d86a185f398ba9, type: 2}
+      voice: {fileID: 11400000, guid: 8b8b9c6e85938aa48b4f74a139b187db, type: 2}
+    snakeList: []
+    itemList: []
+  - evtSceneName: Dialog
+    gmb: {fileID: 6138185418471125062, guid: c1d43be24256c5d43983a8a99e68fe49, type: 3}
+    spriteChangeList: []
+    fadeList: []
+    dialogList:
+    - dialogName: Vieillard
+      txt: 
+      character: {fileID: 11400000, guid: 637c2e0fac4f0984e949e48481344961, type: 2}
+      voice: {fileID: 11400000, guid: 76068e6953b0b2241b51795cb91b4be9, type: 2}
     snakeList: []
     itemList: []
   eventNext: {fileID: 0}

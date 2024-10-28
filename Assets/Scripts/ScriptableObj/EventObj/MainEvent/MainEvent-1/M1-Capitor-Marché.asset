@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f305b545501e3e04194503ad8859468c, type: 3}
-  m_Name: M1-Spherod-Habitations 4
+  m_Name: "M1-Capitor-March\xE9"
   m_EditorClassIdentifier: 
   evtSceneList:
   - evtSceneName: Dialog
@@ -18,10 +18,10 @@ MonoBehaviour:
     spriteChangeList: []
     fadeList: []
     dialogList:
-    - dialogName: Adamant
-      txt: Elvin ! Quelle bonne surprise, que fais-tu par ici ?
-      character: {fileID: 11400000, guid: 152c3b2255d941541b304a2f0d03de39, type: 2}
-      voice: {fileID: 11400000, guid: 69a33db8e31931145a1b22411e50c93a, type: 2}
+    - dialogName: Vendeur
+      txt: 
+      character: {fileID: 11400000, guid: aa259c45ab8e16e4abc8f748a0803d56, type: 2}
+      voice: {fileID: 11400000, guid: 794f27f9a7a835b4bb4cc11a412ad189, type: 2}
     snakeList: []
     itemList: []
   eventNext: {fileID: 0}

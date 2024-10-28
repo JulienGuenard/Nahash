@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f305b545501e3e04194503ad8859468c, type: 3}
-  m_Name: M1-Capitor-Habitations 1
+  m_Name: M1-Capitor-Tribunal
   m_EditorClassIdentifier: 
   evtSceneList:
   - evtSceneName: Dialog
@@ -18,10 +18,21 @@ MonoBehaviour:
     spriteChangeList: []
     fadeList: []
     dialogList:
-    - dialogName: Adamant
-      txt: Elvin ! Quelle bonne surprise, que fais-tu par ici ?
-      character: {fileID: 11400000, guid: 152c3b2255d941541b304a2f0d03de39, type: 2}
-      voice: {fileID: 11400000, guid: 69a33db8e31931145a1b22411e50c93a, type: 2}
+    - dialogName: Elvin
+      txt: 
+      character: {fileID: 11400000, guid: 9723f8a17e5e24c468d86a185f398ba9, type: 2}
+      voice: {fileID: 11400000, guid: 8b8b9c6e85938aa48b4f74a139b187db, type: 2}
+    snakeList: []
+    itemList: []
+  - evtSceneName: Dialog
+    gmb: {fileID: 6138185418471125062, guid: c1d43be24256c5d43983a8a99e68fe49, type: 3}
+    spriteChangeList: []
+    fadeList: []
+    dialogList:
+    - dialogName: Garde
+      txt: 
+      character: {fileID: 11400000, guid: 2859c2bd4b0314945a5b858cd5c074ae, type: 2}
+      voice: {fileID: 11400000, guid: 68c6bbc12996dba46b439d000b9b62fb, type: 2}
     snakeList: []
     itemList: []
   eventNext: {fileID: 0}

@@ -130,7 +130,7 @@ MonoBehaviour:
   buttonObj: {fileID: 0}
   sceneToGo: 2
   sceneHeroToGo: 0
-  eventNext: {fileID: 11400000, guid: a0efa27be72249842a2a5e6c3103e0ab, type: 2}
+  eventNext: {fileID: 11400000, guid: a1d92f716ba0ac1429960c3049affec1, type: 2}
   fadeType: 0
 --- !u!61 &3633909299860876573
 BoxCollider2D:
@@ -1245,7 +1245,7 @@ MonoBehaviour:
   buttonObj: {fileID: 0}
   sceneToGo: 2
   sceneHeroToGo: 0
-  eventNext: {fileID: 11400000, guid: a0efa27be72249842a2a5e6c3103e0ab, type: 2}
+  eventNext: {fileID: 11400000, guid: b47d853efe6dda14e85215b3dcc3d1d3, type: 2}
   fadeType: 0
 --- !u!61 &7454593809600688407
 BoxCollider2D:
@@ -1392,7 +1392,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Tr\xF4ne"
+  m_text: Palais mystique
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1564,7 +1564,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Archerie
+  m_text: Tour de cristal rubis
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1736,7 +1736,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lice
+  m_text: Couvent
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1938,7 +1938,7 @@ MonoBehaviour:
   buttonObj: {fileID: 0}
   sceneToGo: 2
   sceneHeroToGo: 0
-  eventNext: {fileID: 11400000, guid: a0efa27be72249842a2a5e6c3103e0ab, type: 2}
+  eventNext: {fileID: 11400000, guid: 61393467a64a4fc428df3cf0f4738870, type: 2}
   fadeType: 0
 --- !u!61 &8091735714740088236
 BoxCollider2D:
@@ -2115,7 +2115,7 @@ MonoBehaviour:
   buttonObj: {fileID: 0}
   sceneToGo: 2
   sceneHeroToGo: 0
-  eventNext: {fileID: 11400000, guid: a0efa27be72249842a2a5e6c3103e0ab, type: 2}
+  eventNext: {fileID: 11400000, guid: e437c7bb7e181524a861d61b07909cad, type: 2}
   fadeType: 0
 --- !u!61 &2138357328210909848
 BoxCollider2D:
@@ -2434,7 +2434,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Caserne
+  m_text: Tour de cristal azur
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
