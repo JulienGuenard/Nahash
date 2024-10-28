@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc940565d6b34d44821a18b27791e2b, type: 3}
   m_Name: TempleEnfoui
   m_EditorClassIdentifier: 
-  townGMB: {fileID: 365076249389096026, guid: c0f56aaf3b868214bb4ccb31bb3e3268, type: 3}
+  townGMB: {fileID: 365076249389096026, guid: 289db9d0196c7664ab739debe6de0d4b, type: 3}

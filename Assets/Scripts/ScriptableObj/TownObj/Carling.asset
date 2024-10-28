@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfc940565d6b34d44821a18b27791e2b, type: 3}
+  m_Name: Carling
+  m_EditorClassIdentifier: 
+  townGMB: {fileID: 365076249389096026, guid: 29a5f9e6720328545a9d8978d51431fb, type: 3}

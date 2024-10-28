@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f305b545501e3e04194503ad8859468c, type: 3}
+  m_Name: M1-Assyrium-Habitations
+  m_EditorClassIdentifier: 
+  evtSceneList:
+  - evtSceneName: Dialog
+    gmb: {fileID: 6138185418471125062, guid: c1d43be24256c5d43983a8a99e68fe49, type: 3}
+    spriteChangeList: []
+    fadeList: []
+    dialogList:
+    - dialogName: Villageois
+      txt: "Aujourd'hui Beige est vraiment remont\xE9 contre Cristoff, il va surement
+        lui arracher la t\xEAte !"
+      character: {fileID: 11400000, guid: aa259c45ab8e16e4abc8f748a0803d56, type: 2}
+      voice: {fileID: 11400000, guid: 794f27f9a7a835b4bb4cc11a412ad189, type: 2}
+    snakeList: []
+    itemList: []
+  - evtSceneName: Dialog
+    gmb: {fileID: 6138185418471125062, guid: c1d43be24256c5d43983a8a99e68fe49, type: 3}
+    spriteChangeList: []
+    fadeList: []
+    dialogList:
+    - dialogName: Villageois
+      txt: "Il parait que Montodal a \xE9t\xE9 pay\xE9 un bon pactole pour perdre
+        face \xE0 Hijack."
+      character: {fileID: 11400000, guid: 9ddc4c8325c2c764a888ed83143b2a17, type: 2}
+      voice: {fileID: 11400000, guid: c9f43520431d0a943849ac0745bdf0dd, type: 2}
+    snakeList: []
+    itemList: []
+  eventNext: {fileID: 0}
+  sceneNext: 6

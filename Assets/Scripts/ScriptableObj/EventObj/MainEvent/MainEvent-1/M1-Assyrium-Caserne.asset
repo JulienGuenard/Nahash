@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f305b545501e3e04194503ad8859468c, type: 3}
+  m_Name: M1-Assyrium-Caserne
+  m_EditorClassIdentifier: 
+  evtSceneList:
+  - evtSceneName: Dialog
+    gmb: {fileID: 6138185418471125062, guid: c1d43be24256c5d43983a8a99e68fe49, type: 3}
+    spriteChangeList: []
+    fadeList: []
+    dialogList:
+    - dialogName: "Ma\xEEtre d'armes"
+      txt: Un peu d'entrainement mon seigneur ?
+      character: {fileID: 11400000, guid: 799ac04af0d581d49be3065d0ef1d338, type: 2}
+      voice: {fileID: 11400000, guid: 8416cf687c50e3a4e9ea0595975133cc, type: 2}
+    snakeList: []
+    itemList: []
+  - evtSceneName: Dialog
+    gmb: {fileID: 6138185418471125062, guid: c1d43be24256c5d43983a8a99e68fe49, type: 3}
+    spriteChangeList: []
+    fadeList: []
+    dialogList:
+    - dialogName: Elvin
+      txt: Pas d'arme pour moi, mais essayez donc de m'attraper !
+      character: {fileID: 11400000, guid: 9723f8a17e5e24c468d86a185f398ba9, type: 2}
+      voice: {fileID: 11400000, guid: 8b8b9c6e85938aa48b4f74a139b187db, type: 2}
+    snakeList: []
+    itemList: []
+  - evtSceneName: Dialog
+    gmb: {fileID: 6138185418471125062, guid: c1d43be24256c5d43983a8a99e68fe49, type: 3}
+    spriteChangeList: []
+    fadeList: []
+    dialogList:
+    - dialogName: "Ma\xEEtre d'armes"
+      txt: "Tr\xE8s bien, allons-y."
+      character: {fileID: 11400000, guid: 799ac04af0d581d49be3065d0ef1d338, type: 2}
+      voice: {fileID: 11400000, guid: 8416cf687c50e3a4e9ea0595975133cc, type: 2}
+    snakeList: []
+    itemList: []
+  eventNext: {fileID: 0}
+  sceneNext: 6
