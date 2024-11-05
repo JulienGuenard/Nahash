@@ -68,5 +68,23 @@ MonoBehaviour:
       voice: {fileID: 11400000, guid: 1c74aeeb9251b80408b956e29f3d2ed7, type: 2}
     snakeList: []
     itemList: []
+  - evtSceneName: Snake
+    gmb: {fileID: 0}
+    spriteChangeList: []
+    fadeList: []
+    dialogList: []
+    snakeList:
+    - snakeMap: {fileID: 4962105885522200220, guid: e997a7b8b6d44eb4c99c20d78aeef4f1, type: 3}
+      scoreGoal: 0
+      scoreObj: {fileID: 0}
+      timeToWait: 0
+      timeToLose: 0
+      playerNotHere: 0
+      enemyGroup:
+      - enemy: {fileID: 128611974643489566, guid: 642c1400dc657994daefd493d94d1d9a, type: 3}
+        number: 1
+        spawnPosMin: {x: -6, y: 3}
+        spawnPosMax: {x: 6, y: 6}
+    itemList: []
   eventNext: {fileID: 0}
   sceneNext: 6

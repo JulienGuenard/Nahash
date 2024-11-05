@@ -24,5 +24,35 @@ MonoBehaviour:
       voice: {fileID: 11400000, guid: 8b8b9c6e85938aa48b4f74a139b187db, type: 2}
     snakeList: []
     itemList: []
+  - evtSceneName: Snake
+    gmb: {fileID: 0}
+    spriteChangeList: []
+    fadeList: []
+    dialogList: []
+    snakeList:
+    - snakeMap: {fileID: 6138042613706340171, guid: cb744318a1ca27b44bdc3ab73ab45901, type: 3}
+      scoreGoal: 0
+      scoreObj: {fileID: 0}
+      timeToWait: 0
+      timeToLose: 0
+      playerNotHere: 0
+      enemyGroup:
+      - enemy: {fileID: 128611974643489566, guid: 20c5617371cfece468dea552d090f7d7, type: 3}
+        number: 2
+        spawnPosMin: {x: -6, y: 3}
+        spawnPosMax: {x: 6, y: 6}
+      - enemy: {fileID: 128611974643489566, guid: 20c5617371cfece468dea552d090f7d7, type: 3}
+        number: 2
+        spawnPosMin: {x: -6, y: 3}
+        spawnPosMax: {x: 6, y: 6}
+      - enemy: {fileID: 128611974643489566, guid: 20c5617371cfece468dea552d090f7d7, type: 3}
+        number: 2
+        spawnPosMin: {x: -6, y: 3}
+        spawnPosMax: {x: 6, y: 6}
+      - enemy: {fileID: 128611974643489566, guid: 20c5617371cfece468dea552d090f7d7, type: 3}
+        number: 2
+        spawnPosMin: {x: -6, y: 3}
+        spawnPosMax: {x: 6, y: 6}
+    itemList: []
   eventNext: {fileID: 0}
   sceneNext: 6

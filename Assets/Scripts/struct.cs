@@ -33,7 +33,10 @@ public class FadeStruct
 {
     public GameObject snakeMap;
     public int scoreGoal;
+    public GameObject scoreObj;
     public int timeToWait;
+    public int timeToLose;
+    public bool playerNotHere;
     public List<EnemyGroupStruct> enemyGroup;
 }
 [System.Serializable]
