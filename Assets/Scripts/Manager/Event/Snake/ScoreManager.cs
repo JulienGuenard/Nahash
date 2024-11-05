@@ -38,9 +38,15 @@ public class ScoreManager : MonoBehaviour
     private void ScoreCheck()
     {
         if (score < scoreGoal) return;
+        if (scoreGoal == 0) { ScoreDestroy(); return; }
 
-        ScoreReset();
-        EvtSceneManager.instance.StartEvtScene();
-        TimerManager.instance.TimerEnd();
+        SnakeManager.instance.SnakeWin();  
+    }
+
+    private void ScoreDestroy()
+    {
+        if (UIManager.instance.ScoreTxt == null) return;
+
+        Destroy(UIManager.instance.ScoreTxt);
     }
 }

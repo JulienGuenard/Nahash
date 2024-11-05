@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   voiceStruct:
     sfx: {fileID: 8300000, guid: 2cb8498d39d0e4a4b9fb7818abd763a4, type: 3}
-    speed: 0.03
+    speed: 0.001
     pitch: 1
     pitchRand: 0.4
     spaceDelay: 0.07

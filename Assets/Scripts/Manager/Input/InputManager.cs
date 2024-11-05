@@ -23,6 +23,7 @@ public class InputManager : MonoBehaviour
     private void Update()
     {
         AxisInput();
+        AnyInput();
     }
 
     public void InputEnable()
@@ -48,8 +49,10 @@ public class InputManager : MonoBehaviour
     public void NextInput()
     {
         if (!playerCanInteract) return;
+        VoiceManager.instance.VoiceSpeedUp();
+        if (!EvtSceneManager.instance.CanPlayerGoNext) return;
 
-        if (EvtSceneManager.instance.CanPlayerGoNext) EvtSceneManager.instance.Next();
+        EvtSceneManager.instance.Next();
     }
 
     private void AxisInput()
@@ -58,6 +61,12 @@ public class InputManager : MonoBehaviour
         float inputY = Input.GetAxisRaw("Vertical");
 
         SnakeManager.instance.Input_SnakeDirection(inputX, inputY);
+    }
+    private void AnyInput()
+    {
+        if (!Input.anyKeyDown || Input.GetKeyDown(KeyCode.Mouse0)) return;
+
+        NextInput();
     }
 
     public void SceneNew(SceneName sceneToGo, EventObj eventNext)

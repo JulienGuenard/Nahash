@@ -10,6 +10,9 @@ TagManager:
   - Town
   - Waypoint
   - WorldmapSquare
+  - PlayerVision
+  - Enemy
+  - Exit
   layers:
   - Default
   - TransparentFX

@@ -4,7 +4,7 @@ public class TownData : MonoBehaviour
 {
     public TownObj townObj;
 
-    private void Start()
+    private void Awake()
     {
         Reveal(false);
     }
@@ -14,17 +14,9 @@ public class TownData : MonoBehaviour
         GetComponent<SpriteRenderer>().enabled = state;
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.tag == "WorldmapSquare")
-        {
-            Reveal(true);
-        }
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "PlayerVision")
         {
             Reveal(true);
         }

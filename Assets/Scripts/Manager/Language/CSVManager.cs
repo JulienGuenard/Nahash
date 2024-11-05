@@ -109,7 +109,7 @@ public class CSVManager : MonoBehaviour
         int langID = LanguageManager.instance.LangID;
         int langNumber = LanguageManager.instance.langNumber;
 
-        for (int i = langID+langNumber+2; i < data.Count; i += langNumber+1)
+        for (int i = langID+langNumber+4; i < data.Count; i += langNumber+2)
         {
             dataResult.Add(data[i]);
         }

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f305b545501e3e04194503ad8859468c, type: 3}
+  m_Name: M1-Est-RNG 5
+  m_EditorClassIdentifier: 
+  evtSceneList:
+  - evtSceneName: Dialog
+    gmb: {fileID: 6138185418471125062, guid: c1d43be24256c5d43983a8a99e68fe49, type: 3}
+    spriteChangeList: []
+    fadeList: []
+    dialogList:
+    - dialogName: ' '
+      txt: File nous ta tune, gringo !
+      character: {fileID: 11400000, guid: 9723f8a17e5e24c468d86a185f398ba9, type: 2}
+      voice: {fileID: 11400000, guid: 8b8b9c6e85938aa48b4f74a139b187db, type: 2}
+    snakeList: []
+    itemList: []
+  eventNext: {fileID: 0}
+  sceneNext: 6

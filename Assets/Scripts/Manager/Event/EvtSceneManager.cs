@@ -54,6 +54,7 @@ public class EvtSceneManager : MonoBehaviour
 
     public void Next()
     {
+        EvtSceneDisable();
         idCurrent++;
 
         if (idCurrent < eventCurrent.evtSceneList.Count)
@@ -72,11 +73,10 @@ public class EvtSceneManager : MonoBehaviour
 
         List<SnakeStruct> snakeStructList = eventCurrent.evtSceneList[idCurrent].snakeList;
         if (snakeStructList.Count > 0) { Next_IsSnake(snakeStructList); return; }
-
-
     }
     private void Next_New()
     {
+        if (eventCurrent.evtSceneList[idCurrent].gmb == null) return;
         if (sceneCurrent != null) Destroy(sceneCurrent);
 
         GameObject sceneGMB = eventCurrent.evtSceneList[idCurrent].gmb;
@@ -100,25 +100,32 @@ public class EvtSceneManager : MonoBehaviour
     private void Next_IsSnake(List<SnakeStruct> snakeStructList)
     {
         CanPlayerGoNext = false;
-        
-        UIManager.instance.ScoreTxt = GameObject.Find("SnakeView/Score").GetComponent<TextMeshPro>();
-        UIManager.instance.TimeTxt = GameObject.Find("SnakeView/Time").GetComponent<TextMeshPro>();
-        UIManager.instance.LifeTxt = GameObject.Find("SnakeView/Life").GetComponent<TextMeshPro>();
-        ArenaManager.instance.GridTransform = GameObject.Find("SnakeView/GrpWall").transform;
-        SnakeManager.instance.PlayerSnake = GameObject.Find("Snake/SnakeHead").GetComponent<Snake>();
+        UIManager.instance.DialogTxt.text = " ";
 
+        SnakeManager.instance.EvtScene_SnakeNew(snakeStructList[0]);
+        SnakeManager.instance.PlayerSnake = GameObject.Find("Snake/SnakeHead").GetComponent<Snake>();
+        UIManager.instance.ScoreTxt = GameObject.Find("SnakeMap/Score").GetComponent<TextMeshPro>();
+        UIManager.instance.TimeTxt = GameObject.Find("SnakeMap/Time").GetComponent<TextMeshPro>();
+        UIManager.instance.LifeTxt = GameObject.Find("SnakeMap/Life").GetComponent<TextMeshPro>();
+        
         if (snakeStructList[0].scoreGoal == 0)
             UIManager.instance.ScoreTxt.gameObject.SetActive(false);
         else
         {
             ScoreManager.instance.ScoreGoal = snakeStructList[0].scoreGoal;
             ScoreManager.instance.ScoreReset();
+            FoodManager.instance.FoodCreate();
         }
 
         if (snakeStructList[0].timeToWait == 0 || snakeStructList[0].timeToWait > 950)
-        UIManager.instance.TimeTxt.gameObject.SetActive(false);
-        else TimerManager.instance.TimerTimeLeft = snakeStructList[0].timeToWait;
-
+        {
+            UIManager.instance.TimeTxt.gameObject.SetActive(false);
+        }
+        else
+        {
+            TimerManager.instance.TimerTimeLeft = snakeStructList[0].timeToWait;
+            TimerManager.instance.TimerStart();
+        }
     }
     private void Next_IsNewItem(List<ItemObj> itemStructList)
     {

@@ -27,9 +27,9 @@ public class WorldmapPlayer : MonoBehaviour
     private IEnumerator Move()
     {
         Vector2 moveTowards = Vector2.MoveTowards(player.transform.position, waypoint.transform.position, speed);
-        player.GetComponent<CircleCollider2D>().offset = moveTowards - (Vector2)player.transform.position;
+        player.GetComponentInChildren<CircleCollider2D>().offset = moveTowards - (Vector2)player.transform.position;
         yield return new WaitForSeconds(0.02f);
-        player.GetComponent<CircleCollider2D>().offset = Vector2.zero;
+        player.GetComponentInChildren<CircleCollider2D>().offset = Vector2.zero;
         if (isMoving)
         {
             player.transform.position = moveTowards;

@@ -7,5 +7,4 @@ public class EventObj : ScriptableObject
     public List<EvtSceneStruct> evtSceneList;
     public EventObj eventNext;
     public SceneName sceneNext;
-
 }

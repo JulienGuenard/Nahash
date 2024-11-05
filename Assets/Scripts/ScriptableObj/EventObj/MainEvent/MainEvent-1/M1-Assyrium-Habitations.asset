@@ -18,7 +18,7 @@ MonoBehaviour:
     spriteChangeList: []
     fadeList: []
     dialogList:
-    - dialogName: Villageois
+    - dialogName: Villageois 1
       txt: "Aujourd'hui Beige est vraiment remont\xE9 contre Cristoff, il va surement
         lui arracher la t\xEAte !"
       character: {fileID: 11400000, guid: aa259c45ab8e16e4abc8f748a0803d56, type: 2}
@@ -30,7 +30,7 @@ MonoBehaviour:
     spriteChangeList: []
     fadeList: []
     dialogList:
-    - dialogName: Villageois
+    - dialogName: Villageois 2
       txt: "Il parait que Montodal a \xE9t\xE9 pay\xE9 un bon pactole pour perdre
         face \xE0 Hijack."
       character: {fileID: 11400000, guid: 9ddc4c8325c2c764a888ed83143b2a17, type: 2}

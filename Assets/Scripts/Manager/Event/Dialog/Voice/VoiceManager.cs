@@ -5,6 +5,12 @@ using UnityEngine;
 
 public class VoiceManager : MonoBehaviour
 {
+    AudioClip sfx;
+    float speed;
+    float spaceDelay;
+    float virguleDelay;
+    float pointDelay;
+
     #region References
     public static VoiceManager instance;
 
@@ -18,23 +24,31 @@ public class VoiceManager : MonoBehaviour
     {
         StartCoroutine(VoicePlay_Running(dialog));
     }
+    public void VoiceSpeedUp()
+    {
+        sfx = null;
+        speed = 0f;
+        spaceDelay = 0f;
+        virguleDelay = 0f;
+        pointDelay = 0f;
+    }
 
     IEnumerator VoicePlay_Running(DialogStruct dialog)
     {
         VoiceStruct voice = dialog.voice.voiceStruct;
 
         string txt = dialog.txt;
-        AudioClip sfx = voice.sfx;
+        sfx = voice.sfx;
         float pitch = voice.pitch;
         float pitchRand = voice.pitchRand;
-        float speed = voice.speed;
-        float spaceDelay = voice.spaceDelay;
-        float virguleDelay = voice.virguleDelay;
-        float pointDelay = voice.pointDelay;
+        speed = voice.speed;
+        spaceDelay = voice.spaceDelay;
+        virguleDelay = voice.virguleDelay;
+        pointDelay = voice.pointDelay;
 
         for (int x = 1; x < txt.Length + 1; x++)
         {
-            yield return new WaitForSeconds(speed);
+            if (speed != 0) yield return new WaitForSeconds(speed);
 
             if (txt.Substring(x).StartsWith("<"))
             {
@@ -48,17 +62,17 @@ public class VoiceManager : MonoBehaviour
 
             if (txt.Substring(x - 1).StartsWith(" "))
             {
-                yield return new WaitForSeconds(spaceDelay);
+                if (spaceDelay != 0) yield return new WaitForSeconds(spaceDelay);
                 continue;
             }
             if (txt.Substring(x - 1).StartsWith(","))
             {
-                yield return new WaitForSeconds(virguleDelay);
+                if (virguleDelay != 0) yield return new WaitForSeconds(virguleDelay);
                 continue;
             }
             if (txt.Substring(x - 1).StartsWith("."))
             {
-                yield return new WaitForSeconds(pointDelay);
+                if (pointDelay != 0) yield return new WaitForSeconds(pointDelay);
                 continue;
             }
             if (x >= txt.Length) continue;

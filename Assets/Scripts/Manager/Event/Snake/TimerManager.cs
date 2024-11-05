@@ -38,11 +38,10 @@ public class TimerManager : MonoBehaviour
         UIManager.instance.TimeTxt.text = "Time : " + timerTimeLeft;
     }
     private void TimerTimeleft_Over()
-    {
+    {   
         TimerEnd();
-        EvtSceneManager.instance.StartEvtScene();
-        ScoreManager.instance.ScoreReset();
-    }
+        SnakeManager.instance.SnakeWin();
+    }     
 
     private IEnumerator TimerStart_Decreasing()
     {

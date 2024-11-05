@@ -31,6 +31,16 @@ public class FadeStruct
 }
 [System.Serializable] public struct SnakeStruct
 {
+    public GameObject snakeMap;
     public int scoreGoal;
     public int timeToWait;
+    public List<EnemyGroupStruct> enemyGroup;
+}
+[System.Serializable]
+public struct EnemyGroupStruct
+{
+    public GameObject enemy;
+    public int number;
+    public Vector2 spawnPosMin;
+    public Vector2 spawnPosMax;
 }
