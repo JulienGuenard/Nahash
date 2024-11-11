@@ -34,6 +34,6 @@ public class PlayerManager : MonoBehaviour
 
     private void Death()
     {
-        GameManager.instance.Lose();
+        GameManagerMain.instance.Lose();
     }
 }
